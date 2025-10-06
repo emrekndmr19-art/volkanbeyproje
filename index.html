@@ -1,20 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="tr">
   <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enerji Grup Teknik Mühendislik</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
-
-    <title>Enerji Grup Teknik</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style>
       :root {
         color-scheme: dark;
+      }
+
+      body {
+        font-family: "Space Grotesk", "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
 
       @keyframes fade-in-up {
@@ -26,17 +31,6 @@
         100% {
           opacity: 1;
           transform: translateY(0);
-        }
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-
-        50% {
-          transform: translateY(-10px);
         }
       }
 
@@ -56,33 +50,24 @@
       .fade-in.delay-3 {
         animation-delay: 0.6s;
       }
-
-      .float-slow {
-        animation: float 6s ease-in-out infinite;
-      }
     </style>
   </head>
-  <body>
-    <div
-      class="relative flex h-auto min-h-screen w-full flex-col bg-[#071015] dark group/design-root overflow-x-hidden"
-      style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'
-    >
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="relative flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223c49] px-6 md:px-12 py-4">
-          <div class="flex items-center gap-4 text-white">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+  <body class="bg-[#050d11] text-white">
+    <div class="relative min-h-screen overflow-x-hidden">
+      <header class="border-b border-white/10 bg-[#06131a]/90 backdrop-blur">
+        <div class="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-6 px-6 py-4 sm:px-10 lg:px-20">
+          <div class="flex items-center gap-4">
+            <div class="h-12 w-12 rounded-2xl border border-dashed border-white/30 bg-white/5 p-1 text-xs text-white/60">
+              <div class="flex h-full w-full items-center justify-center text-center">
+                Logo Alanı<br />400×400px
+              </div>
             </div>
-            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Enerji Grup Teknik</h2>
+            <div>
+              <p class="text-xs uppercase tracking-[0.4em] text-[#f5c15c]">Enerji Grup Teknik</p>
+              <h1 class="text-lg font-semibold tracking-tight">Enerji Grup Teknik Mühendislik</h1>
+            </div>
           </div>
-          <div class="flex flex-1 items-center justify-end gap-3">
+          <div class="flex items-center gap-4">
             <button
               id="mobile-menu-toggle"
               class="inline-flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition hover:border-white/30 hover:bg-white/10 lg:hidden"
@@ -95,334 +80,328 @@
                 <path d="M4 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
               </svg>
             </button>
-            <div class="hidden items-center gap-8 lg:flex">
-              <a class="text-white/80 text-sm font-medium leading-normal transition hover:text-white" href="#">Anasayfa</a>
-              <a class="text-white/80 text-sm font-medium leading-normal transition hover:text-white" href="#hakkimizda">Hakkımızda</a>
-              <a class="text-white/80 text-sm font-medium leading-normal transition hover:text-white" href="#hizmetler">Hizmetler</a>
-              <a class="text-white/80 text-sm font-medium leading-normal transition hover:text-white" href="#projeler">Projeler</a>
-              <a class="text-white/80 text-sm font-medium leading-normal transition hover:text-white" href="#iletisim">İletişim</a>
+            <nav class="hidden items-center gap-8 text-sm font-medium text-white/70 lg:flex">
+              <a class="transition hover:text-white" href="#">Anasayfa</a>
+              <a class="transition hover:text-white" href="#hakkimizda">Hakkımızda</a>
+              <a class="transition hover:text-white" href="#hizmetler">Hizmetler</a>
+              <a class="transition hover:text-white" href="#ndt">Tahribatsız Muayene</a>
+              <a class="transition hover:text-white" href="#iletisim">İletişim</a>
+            </nav>
+          </div>
+        </div>
+        <nav id="mobile-navigation" class="hidden border-t border-white/10 bg-[#040c10] lg:hidden">
+          <div class="flex flex-col px-6 py-4 text-sm text-white/80">
+            <a class="rounded-xl px-4 py-3 transition hover:bg-white/5" href="#">Anasayfa</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-white/5" href="#hakkimizda">Hakkımızda</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-white/5" href="#hizmetler">Hizmetler</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-white/5" href="#ndt">Tahribatsız Muayene</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-white/5" href="#iletisim">İletişim</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="mx-auto flex w-full max-w-[1200px] flex-col gap-16 px-6 py-16 sm:px-10 lg:px-20">
+        <section class="grid items-center gap-12 rounded-[32px] border border-white/10 bg-gradient-to-br from-[#0c1c24] via-[#09151b] to-[#0c1c24] p-10 shadow-[0_25px_60px_rgba(5,12,16,0.45)] lg:grid-cols-[1.2fr_0.8fr]">
+          <div class="space-y-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-[#f7a43d]">Mühendislikte güven</p>
+            <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Enerji altyapısına yönelik bağımsız ve tarafsız teknik çözümler</h2>
+            <p class="text-base leading-relaxed text-white/70">
+              Enerji Grup Teknik Mühendislik; deneyimli makina mühendisleri ve tahribatsız muayene uzmanlarından oluşan kadrosuyla, endüstriyel tesislerin güvenli, verimli ve mevzuata uygun şekilde işletilmesi için kapsamlı hizmetler sunar.
+            </p>
+            <div class="flex flex-col gap-4 sm:flex-row">
+              <a class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#f5c15c] via-[#f7a43d] to-[#f15656] px-8 py-3 text-sm font-semibold text-[#050d11] transition hover:scale-105" href="#iletisim">
+                Uzmanlarımızla İletişime Geçin
+              </a>
+              <span class="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3 text-sm font-semibold text-white/70">
+                15+ yıllık saha deneyimi
+              </span>
             </div>
-            <button
-              class="hidden min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-5 bg-gradient-to-r from-[#f5c15c] via-[#f7a43d] to-[#f15656] text-[#071015] text-sm font-bold leading-normal tracking-[0.015em] shadow-[0_10px_30px_rgba(241,86,86,0.25)] transition hover:scale-105 sm:flex"
-            >
-              <span class="truncate">Teklif Al</span>
-            </button>
           </div>
-        </header>
-        <div
-          id="mobile-navigation"
-          class="hidden border-b border-white/10 bg-[#071015]/98 px-6 py-4 text-sm text-white/80 transition-all duration-300 lg:hidden"
-        >
-          <nav class="flex flex-col gap-4">
-            <a class="transition hover:text-white" href="#">Anasayfa</a>
-            <a class="transition hover:text-white" href="#hakkimizda">Hakkımızda</a>
-            <a class="transition hover:text-white" href="#hizmetler">Hizmetler</a>
-            <a class="transition hover:text-white" href="#projeler">Projeler</a>
-            <a class="transition hover:text-white" href="#iletisim">İletişim</a>
-            <a
-              class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#f5c15c] via-[#f7a43d] to-[#f15656] px-6 py-2 text-center font-semibold text-[#071015] shadow-[0_10px_25px_rgba(241,86,86,0.25)]"
-              href="#iletisim"
-            >
-              Teklif Alın
-            </a>
-          </nav>
-        </div>
-        <div class="relative flex flex-1 justify-center px-6 py-12 sm:px-10 lg:px-20 xl:px-28">
-          <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(245,193,92,0.18),_rgba(7,16,21,0)_60%)]"></div>
-          <div class="layout-content-container flex w-full max-w-[1200px] flex-col gap-16">
-            <section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center fade-in">
-              <div class="space-y-6">
-                <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#f5c15c]">
-                  Endüstriyel Enerji Mühendisliği
-                </span>
-                <h1 class="text-4xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-5xl">
-                  Enerji Sistemleriniz İçin Güvenilir Mühendislik
-                </h1>
-                <p class="max-w-xl text-base leading-relaxed text-white/70">
-                  Enerji Grup Teknik; üretim tesisleri, enerji santralleri ve altyapı projeleri için uçtan uca mühendislik hizmetleri sağlar. Tasarımdan devreye almaya kadar her aşamada standartlara uygun, sürdürülebilir ve verimli çözümler geliştiriyoruz.
-                </p>
-                <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <button class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#f5c15c] via-[#f7a43d] to-[#f15656] px-8 py-3 text-sm font-semibold text-[#071015] shadow-[0_12px_30px_rgba(241,86,86,0.25)] transition hover:scale-105">
-                    Çözüm Planlayalım
-                  </button>
-                  <a class="inline-flex items-center gap-3 text-sm font-semibold text-white/80 transition hover:text-white" href="#projeler">
-                    <span class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">→</span>
-                    Referans Projelerimizi İnceleyin
-                  </a>
-                </div>
-                <div class="grid gap-4 text-white/60 sm:grid-cols-3">
-                  <div class="flex items-start gap-3">
-                    <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-sm font-bold text-[#f5c15c]">25+</span>
-                    <p class="text-sm leading-snug">Yıllık sektör deneyimi ve uzman mühendis kadrosu</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-sm font-bold text-[#f5c15c]">150+</span>
-                    <p class="text-sm leading-snug">Tamamlanan endüstriyel enerji ve tesis projesi</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-sm font-bold text-[#f5c15c]">7/24</span>
-                    <p class="text-sm leading-snug">Saha ve bakım desteği ile kesintisiz hizmet</p>
-                  </div>
-                </div>
-              </div>
-              <div class="relative flex items-center justify-center">
-                <div class="absolute inset-0 rounded-[36px] bg-gradient-to-br from-[#f5c15c]/10 via-transparent to-[#223c49]/40 blur-3xl"></div>
-                <div
-                  class="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 shadow-[0_25px_80px_rgba(17,34,43,0.55)] backdrop-blur-sm float-slow"
-                >
-                  <img
-                    class="h-full w-full max-w-[520px] object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA77GQW2cDAyP5EXQVayecRj4W4_NX_IMmxD1m8eBXmh8IDgrrncdxCtaulzNKs2Gk_jXFzj7JQQUCE9O4gA4yYB58SpSCucAF8cHAzLdmsRhbBHYNVDqYyfTepyP7Axr4Pej9UcNEDvK7fID85LaX5fXLBORmr-03vgSL411BL-J6vgneqvlsLN7IE2jCIx9mqwf0bkmacH2WHQUJjUrFsa4aDaPU4uJB0KETyPtu03niZWGfDkRwrxuCxTy8-VMapzq4Qy1YSnLnT"
-                    alt="Enerji mühendisleri"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[#071015] via-transparent to-transparent"></div>
-                  <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between rounded-2xl bg-[#071015]/80 px-5 py-4">
-                    <div>
-                      <p class="text-sm font-semibold text-white">Enerji Grup Teknik</p>
-                      <p class="text-xs text-white/60">Enerji altyapısında anahtar teslim mühendislik çözümleri</p>
-                    </div>
-                    <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#f7a43d] to-[#f15656] text-[#071015] font-bold">EG</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section id="hizmetler" class="fade-in delay-1 space-y-8">
-              <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h2 class="text-3xl font-semibold tracking-[-0.02em] text-white">Uzmanlık Alanlarımız</h2>
-                  <p class="mt-2 max-w-2xl text-sm text-white/60">
-                    Enerji üretimi, proses güvenliği ve tesis işletmesinde tüm aşamaları planlıyor, projelendiriyor ve denetliyoruz.
-                  </p>
-                </div>
-                <a class="inline-flex items-center gap-2 text-sm font-semibold text-[#f5c15c] transition hover:text-[#f7a43d]" href="#iletisim">
-                  Detaylı bilgi için iletişime geçin
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-              <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.4)]">
-                  <div class="absolute inset-0 bg-gradient-to-br from-[#f5c15c]/10 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                  <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f7a43d]">⛽</div>
-                  <h3 class="relative z-10 mt-5 text-xl font-semibold text-white">Basınçlı Kap Tasarımı</h3>
-                  <p class="relative z-10 mt-3 text-sm leading-relaxed text-white/65">
-                    Basınçlı kapların tasarımı, imalat gözetimi ve periyodik kontrollerini uluslararası standartlara uygun şekilde yönetiyoruz.
-                  </p>
-                </article>
-                <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.4)]">
-                  <div class="absolute inset-0 bg-gradient-to-br from-[#f7a43d]/10 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                  <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f5c15c]">🪝</div>
-                  <h3 class="relative z-10 mt-5 text-xl font-semibold text-white">Kaldırma Sistemleri</h3>
-                  <p class="relative z-10 mt-3 text-sm leading-relaxed text-white/65">
-                    Vinç, platform ve taşıma hatlarının mühendislik hesapları, montaj süpervizyonu ve yük testlerini gerçekleştiriyoruz.
-                  </p>
-                </article>
-                <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.4)]">
-                  <div class="absolute inset-0 bg-gradient-to-br from-[#f15656]/10 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                  <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f15656]">🔍</div>
-                  <h3 class="relative z-10 mt-5 text-xl font-semibold text-white">Tahribatsız Muayene</h3>
-                  <p class="relative z-10 mt-3 text-sm leading-relaxed text-white/65">
-                    Kritik ekipmanlar için ileri NDT teknikleri, raporlama ve kök neden analizleriyle kalite ve güvenliği garanti altına alıyoruz.
-                  </p>
-                </article>
-                <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.4)]">
-                  <div class="absolute inset-0 bg-gradient-to-br from-[#223c49]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                  <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#90b7cb]">⚡</div>
-                  <h3 class="relative z-10 mt-5 text-xl font-semibold text-white">Yangın ve Elektrik Sistemleri</h3>
-                  <p class="relative z-10 mt-3 text-sm leading-relaxed text-white/65">
-                    Yangın tesisatı, elektrik dağıtımı ve topraklama sistemlerini mevzuata uygun şekilde tasarlıyor, saha testleri ve bakım planlarını hazırlıyoruz.
-                  </p>
-                </article>
-                <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.4)]">
-                  <div class="absolute inset-0 bg-gradient-to-br from-[#f5c15c]/10 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                  <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f7a43d]">🔥</div>
-                  <h3 class="relative z-10 mt-5 text-xl font-semibold text-white">Kaynaklı İmalat Yönetimi</h3>
-                  <p class="relative z-10 mt-3 text-sm leading-relaxed text-white/65">
-                    Kaynak mühendisliği, prosedür hazırlığı, WPQR süreçleri ve sertifikasyon hizmetleriyle üretim kalitenizi güvence altına alıyoruz.
-                  </p>
-                </article>
-                <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.4)]">
-                  <div class="absolute inset-0 bg-gradient-to-br from-[#f15656]/10 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                  <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f15656]">🛠️</div>
-                  <h3 class="relative z-10 mt-5 text-xl font-semibold text-white">Endüstriyel Saha Desteği</h3>
-                  <p class="relative z-10 mt-3 text-sm leading-relaxed text-white/65">
-                    Proje yönetimi, saha süpervizörlüğü, devreye alma ve bakım operasyonları için kapsamlı mühendislik desteği sunuyoruz.
-                  </p>
-                </article>
-              </div>
-            </section>
-
-            <section id="hakkimizda" class="grid gap-10 lg:grid-cols-2">
-              <div class="fade-in delay-2 space-y-6 rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_25px_60px_rgba(12,24,30,0.45)]">
-                <h2 class="text-3xl font-semibold tracking-[-0.02em] text-white">Neden Enerji Grup Teknik?</h2>
-                <p class="text-sm text-white/65">
-                  Enerji Grup Teknik, mühendislik disiplinlerini dijital çözümlerle buluşturarak projelerinize değer katar. Şeffaf iletişim, ölçülebilir performans ve sürdürülebilir sonuçlar için yanınızdayız.
-                </p>
-                <div class="flex flex-col gap-6">
-                  <div class="flex gap-4">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f5c15c]">🔒</div>
-                    <div>
-                      <h3 class="text-lg font-semibold text-white">Güvenilirlik</h3>
-                      <p class="mt-1 text-sm text-white/60">Tüm süreçlerde doğruluk, bağımsızlık ve tarafsızlık ilkelerinden ödün vermeden çalışıyoruz.</p>
-                    </div>
-                  </div>
-                  <div class="flex gap-4">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f7a43d]">🧠</div>
-                    <div>
-                      <h3 class="text-lg font-semibold text-white">Uzmanlık</h3>
-                      <p class="mt-1 text-sm text-white/60">20 yılı aşkın deneyime sahip mühendis ekibimizle, yüksek riskli projelerde dahi sonuç odaklı ilerliyoruz.</p>
-                    </div>
-                  </div>
-                  <div class="flex gap-4">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-2xl text-[#f15656]">💡</div>
-                    <div>
-                      <h3 class="text-lg font-semibold text-white">Kalite</h3>
-                      <p class="mt-1 text-sm text-white/60">Uluslararası standartlara uyumlu süreç yönetimiyle projelerinizi güvence altına alıyoruz.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fade-in delay-3 grid gap-5">
-                <div class="overflow-hidden rounded-[28px] border border-white/10 bg-white/5">
-                  <img
-                    class="h-full w-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZPdTOtyMtPfFOo6QK8_KkO022FkPMKVfeRUG-RA0HFM6H-njN7B3SZTrCkK6CjSg4OM4r45PkKQ8UvG2BDwBi5rfpPFHtK-u9-xosBsEBWYGkiH9Wp4V7auO4_y8Oczefvywto5VM7IoH2_N3fFiMuAXvZ-fKQnOP-BGDhB4SNdCtyC-Eyg3hV53pDsemEzNPp8HrJYlKhHEEzNR9F9miAOQr9h94H1Wuy7XT7f9ClpPiIU4HpEzFVu7q8YSMAr6Gnwj-9ifdmf3F"
-                    alt="Enerji santrali"
-                  />
-                </div>
-                <div class="grid gap-5 sm:grid-cols-2">
-                  <div class="overflow-hidden rounded-[28px] border border-white/10 bg-white/5">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCloF0vjKpJ7EtrwGvwlwWCbggD27b3O4bF1D9q41ehUqnEE6xZLcFHgvc1mcfDafyUaI1p8kMv0ryfA3st8abfOTQjXmDcMvuy4Ixj5MBM3VVuSdl-cIz_mF5N0oTHv2AmXfRSCCMKSbAqPu5lDgrFvV9A5EJ5RLzSSIwhQpY23Su1zFIlnLG2cs0aPuBeFSXI-VAmq3D1q4xk9oJQTFZaCFhGMzTC2E8HLbbJYzZnY4OuRgWXJlxIOzx_0ePYDldyy9Ud40TpjMX"
-                      alt="Endüstriyel tesis"
-                    />
-                  </div>
-                  <div class="overflow-hidden rounded-[28px] border border-white/10 bg-white/5">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3F4sIkdmQL6EDbNqo0Aqc0l6U0yfHoQ27i3vr7pBCV9fGCehkfJIbzbN-gu8BtgdHgWr0zJo1NgJSjW6wFNgHlut_eySviax1jDfyrGTTHRKFyLNGuBcgQEJLagQIugvu6kCufs4XPMbZsClXLIDpBgiz4RahSiJ6cs38JV0A8Z1Rvr5KdmYsPRp-KgtnutOUX4B_nwWaCtMUZ3RcP_EA1SHXx-qclqGppBCa1gmLDRfxrlFS_Q4PsvYhxOG1GpkrsTHhQSc-3J6N"
-                      alt="Şehir enerji çözümleri"
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section id="projeler" class="fade-in delay-2 space-y-8">
-              <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <h2 class="text-3xl font-semibold tracking-[-0.02em] text-white">Öne Çıkan Projeler</h2>
-                  <p class="mt-2 max-w-2xl text-sm text-white/60">Türkiye'nin farklı bölgelerinde tamamlanan projelerimizle sürdürülebilir enerji dönüşümüne hız kazandırıyoruz.</p>
-                </div>
-                <div class="inline-flex items-center gap-3 text-sm text-white/60">
-                  <span class="inline-flex h-2 w-2 rounded-full bg-[#f5c15c]"></span>
-                  <span>Her proje için teknik dosya ve rapor paylaşımı</span>
-                </div>
-              </div>
-              <div class="grid gap-6 md:grid-cols-3">
-                <article class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.45)]">
-                  <img
-                    class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqY1dvM9EQfwCl9174H-pYhu-QwITfnFxz-KZrOUDqotkfey2a8lvpq2jIuxsNtySJ8H1pqEsHY1TaonzOZauuJbM_9n4r5u4aIxpbSuRa4a-hHeh7uS5QnBjIpAstNPSgIgyC-TcjrTqtQvNGA48EE8kcWQ6bU_nkpDJlV675WGTf0kYJx8jFoV3Y1SlQZLI1ndP46lw77fYNmC_U1HfznflDT-AoCbV6P9KjBGGu1FpVvtJf1JldH4EItDHwjDJQtJLYb8sed9tE"
-                    alt="Rüzgar enerji projesi"
-                  />
-                  <div class="space-y-3 p-6">
-                    <h3 class="text-lg font-semibold text-white">Rüzgâr Enerjisi Projesi</h3>
-                    <p class="text-sm text-white/65">İzmir'de kurulan rüzgâr enerji santrali için saha mühendisliği, montaj koordinasyonu ve devreye alma çalışmaları.</p>
-                  </div>
-                </article>
-                <article class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.45)]">
-                  <img
-                    class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKyKVdRJDxTDMxZMZAosGD-uukGHBWN32IQzwrS0YzTTtMiwM4fkN1Lvxookj5I-Xu5BX2QUQCNklq_zlFlRYd6wJhZUaAjUCZr7qurhiGPyM8sej5iF9GHTYH8oM6unFNbjFT9sFNSYKZBF_ZhV8bW9P4ePg5mOJJhPlwfJ7oin67sRcN-L1v7h3kndasIGV44Z3b4n_aG879gvRrIFV9lkPFqij1QAzPgV07955dXQNUjrfgNgg3wILwgcRxSKrScHUF2QVIQQNa"
-                    alt="Güneş enerji projesi"
-                  />
-                  <div class="space-y-3 p-6">
-                    <h3 class="text-lg font-semibold text-white">Güneş Enerjisi İnisiyatifi</h3>
-                    <p class="text-sm text-white/65">Konya'daki büyük ölçekli güneş enerji projesinde saha mühendisliği, performans optimizasyonu ve izleme entegrasyonu.</p>
-                  </div>
-                </article>
-                <article class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 transition duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(12,24,30,0.45)]">
-                  <img
-                    class="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu5ded-pTDVeK7uOMhEpdQv6xaKvmBky_T-jd0kMRtt__Z0d-I1ZBQ3p9jOqFEwcltA9_uGr9CySuydkCDHN3X0igpwIFbAyagFrTiGpaDzVGDB21-0fj0mZr5FG3BuLpmtMGD0RSvE_86FLE1FmKUFLhuIJtXQ3fgNDQO45KS7y0-RBmxTwS1oVn8K_LkSoczivWO4875sCnTw8OwzCa8WSbsV0t9cOG3SxouF3_1dxdaYwI_hvinT1hts0cMkMhx0jnGWj_C8Mnz"
-                    alt="Hidroelektrik santral"
-                  />
-                  <div class="space-y-3 p-6">
-                    <h3 class="text-lg font-semibold text-white">Hidroelektrik Santral Modernizasyonu</h3>
-                    <p class="text-sm text-white/65">Antalya'daki hidroelektrik tesisinde kontrol sistemleri modernizasyonu, revizyon planlaması ve bakım mühendisliği hizmetleri.</p>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <section class="fade-in delay-3 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-r from-[#10212b] via-[#0d1a21] to-[#10212b] p-10">
-              <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-                <div class="space-y-5">
-                  <h2 class="text-3xl font-semibold text-white">Projelerinize Güç Katacak Çözümler İçin Hazırız</h2>
-                  <p class="text-sm leading-relaxed text-white/65">
-                    Planlama, tasarım ve saha uygulamalarında uzman desteğe mi ihtiyacınız var? Ekibimizle iletişime geçin, işletmenize değer katacak güvenilir enerji altyapıları oluşturalım.
-                  </p>
-                  <div class="flex flex-col gap-4 sm:flex-row">
-                    <button class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#f5c15c] via-[#f7a43d] to-[#f15656] px-8 py-3 text-sm font-semibold text-[#071015] transition hover:scale-105">Toplantı Planlayın</button>
-                    <a class="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3 text-sm font-semibold text-white transition hover:border-[#f5c15c] hover:text-[#f5c15c]" href="#iletisim">
-                      Hızlı İletişim
-                    </a>
-                  </div>
-                </div>
-                <div class="relative flex items-center justify-center">
-                  <div class="absolute h-40 w-40 rounded-full bg-[#f15656]/20 blur-3xl"></div>
-                  <div class="relative flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_50px_rgba(10,20,26,0.4)]">
-                    <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-3xl text-[#f5c15c]">⚙️</div>
-                    <div>
-                      <p class="text-sm font-semibold text-white">Enerji Grup Teknik</p>
-                      <p class="text-xs text-white/60">Saha mühendisliği | Proje yönetimi | Denetim</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-      <footer id="iletisim" class="border-t border-white/10 bg-[#050d11]/95">
-        <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 py-12 sm:px-10 lg:px-20 xl:px-28">
-          <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
-            <div class="space-y-4">
-              <div class="flex items-center gap-3 text-white">
-                <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-[#f7a43d] to-[#f15656] text-[#071015] font-bold">EG</div>
-                <span class="text-lg font-semibold tracking-[-0.015em]">Enerji Grup Teknik</span>
-              </div>
-              <p class="text-sm leading-relaxed text-white/60">
-                Enerji altyapı projeleriniz için mühendislik, denetim ve uygulama hizmetleri sunuyoruz. İletişim bilgilerinizi buraya ekleyerek ekiplerimize hızlıca ulaşılmasını sağlayın.
+          <div class="space-y-6">
+            <div class="rounded-[28px] border border-dashed border-white/20 bg-white/5 p-8 text-center text-sm text-white/60">
+              <p class="font-medium text-white">Logo için ayrılan alan</p>
+              <p class="mt-2 leading-relaxed">
+                Firmanızın güncel logosunu bu alana ekleyebilirsiniz. Görsel oranı 1:1 olacak şekilde (ör. 600×600px PNG) eklenmesi önerilir.
               </p>
             </div>
-            <div class="space-y-4">
-              <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#f5c15c]">İletişim Bilgileri</h3>
-              <ul class="space-y-3 text-sm text-white/65">
+            <div class="space-y-3 rounded-[28px] border border-white/10 bg-[#0f2029]/70 p-6">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#f5c15c]">Kuruluş</p>
+              <p class="text-sm leading-relaxed text-white/75">
+                2023 yılında Mersin'de kurulan Enerji Grup Teknik Mühendislik, 15 yılı aşkın tecrübesiyle sanayi kuruluşlarının çözüm ortağıdır.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="fade-in space-y-10" aria-labelledby="kesfet-baslik">
+          <div class="space-y-4 text-center">
+            <p class="text-xs uppercase tracking-[0.35em] text-[#f7a43d]">Ana menü</p>
+            <h2 id="kesfet-baslik" class="text-3xl font-semibold tracking-tight">Enerji Grup Teknik'i keşfedin</h2>
+            <p class="mx-auto max-w-3xl text-sm leading-relaxed text-white/65">
+              Broşürlerinizde yer alan tüm kurumsal bilgileri, uzmanlık başlıklarını ve teknik açıklamaları aşağıdaki görsel yönlendirmeler üzerinden hızlıca inceleyebilirsiniz. Her kart, ilgili detaylı bölüme kaydırır.
+            </p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#07131a] transition hover:-translate-y-1 hover:border-[#f7a43d]/50" href="#hakkimizda">
+              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Kurumsal binayı temsil eden gece ışıkları" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+              <div class="relative space-y-3 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-[#f7a43d]">Kurumsal</p>
+                <h3 class="text-xl font-semibold">Hakkımızda</h3>
+                <p class="text-sm text-white/70">Kuruluş hikayemizi ve bağımsız mühendislik yaklaşımımızı okuyun.</p>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#f5c15c]">Bölüme git <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </a>
+            <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#07131a] transition hover:-translate-y-1 hover:border-[#f7a43d]/50" href="#misyon-vizyon">
+              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Soyut ışıklarla çizilmiş vizyon konsepti" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+              <div class="relative space-y-3 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-[#f7a43d]">Strateji</p>
+                <h3 class="text-xl font-semibold">Misyon &amp; Vizyon</h3>
+                <p class="text-sm text-white/70">Hizmet anlayışımızın temelini oluşturan hedeflerimizi keşfedin.</p>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#f5c15c]">Bölüme git <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </a>
+            <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#07131a] transition hover:-translate-y-1 hover:border-[#f7a43d]/50" href="#uzmanlar">
+              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1581091870627-3fdc0086580d?auto=format&fit=crop&w=900&q=80" alt="Teknik ekip çalışmasını temsil eden görsel" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+              <div class="relative space-y-3 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-[#f7a43d]">Ekip</p>
+                <h3 class="text-xl font-semibold">Uzman Kadro</h3>
+                <p class="text-sm text-white/70">Belgelendirilmiş mühendislik ekibimizin deneyimlerini inceleyin.</p>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#f5c15c]">Bölüme git <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </a>
+            <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#07131a] transition hover:-translate-y-1 hover:border-[#f7a43d]/50" href="#hizmetler">
+              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Endüstriyel tesislerde mühendislik hizmetlerini simgeleyen görsel" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+              <div class="relative space-y-3 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-[#f7a43d]">Çözümler</p>
+                <h3 class="text-xl font-semibold">Hizmetlerimiz</h3>
+                <p class="text-sm text-white/70">Periyodik kontrollerden danışmanlığa kadar tüm başlıkları görün.</p>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#f5c15c]">Bölüme git <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </a>
+            <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#07131a] transition hover:-translate-y-1 hover:border-[#f7a43d]/50" href="#ndt">
+              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=900&q=80" alt="Tahribatsız muayene ekipmanı" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+              <div class="relative space-y-3 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-[#f7a43d]">Denetim</p>
+                <h3 class="text-xl font-semibold">Tahribatsız Muayene</h3>
+                <p class="text-sm text-white/70">Uluslararası standartlarla yürüttüğümüz NDT süreçlerini inceleyin.</p>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#f5c15c]">Bölüme git <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </a>
+            <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#07131a] transition hover:-translate-y-1 hover:border-[#f7a43d]/50" href="#periyodik">
+              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Periyodik kontrol ve bakım süreçlerini temsil eden görsel" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+              <div class="relative space-y-3 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-[#f7a43d]">Süreklilik</p>
+                <h3 class="text-xl font-semibold">Periyodik Kontroller</h3>
+                <p class="text-sm text-white/70">Zorunlu kontrollerin kapsamını ve standartlarını görüntüleyin.</p>
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#f5c15c]">Bölüme git <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="hakkimizda" class="fade-in space-y-12">
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-[0.35em] text-[#f7a43d]">Kurumsal yaklaşım</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Hakkımızda</h2>
+          </div>
+          <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 leading-relaxed text-white/75">
+              <p>
+                Enerji Grup Teknik Mühendislik; 2023 yılında kurulmuş, bünyesinde 15 yıl aşkın iş tecrübesine sahip makina mühendisleri ve tahribatsız muayene uzmanlarının oluşturduğu bir firma olarak Mersin'de çalışma hayatına başlamıştır. Endüstriyel tesislerin güvenli, verimli ve mevzuata uyumlu şekilde işletilmesi için bağımsız mühendislik çözümleri geliştiriyoruz.
+              </p>
+              <p class="mt-4">
+                Enerji altyapısı, makine ve ekipman güvenliği ile iş sağlığı uygulamalarında edindiğimiz saha tecrübesi; danışmanlıktan denetime uzanan süreçlerde işletmelerin sürdürülebilirliğini desteklememize olanak tanır.
+              </p>
+            </article>
+            <div class="space-y-6">
+              <article class="rounded-[28px] border border-white/10 bg-[#08141b] p-6 text-sm leading-relaxed text-white/70">
+                <h3 class="text-base font-semibold text-white">Bağımsız denetim ilkeleri</h3>
+                <p class="mt-3">Tarafsızlık, dürüstlük ve şeffaflık değerlerimiz; her projemizde raporlama disiplinini ve müşteri memnuniyetini ön plana çıkarır.</p>
+              </article>
+              <article class="rounded-[28px] border border-white/10 bg-[#08141b] p-6 text-sm leading-relaxed text-white/70">
+                <h3 class="text-base font-semibold text-white">Sektörel kapsam</h3>
+                <p class="mt-3">Enerji üretim tesislerinden üretim hatlarına kadar geniş bir yelpazede periyodik kontrol, proje ve belgelendirme çalışmaları yürütüyoruz.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section id="misyon-vizyon" class="fade-in delay-1 space-y-12">
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-[0.35em] text-[#f7a43d]">Stratejik odağımız</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Misyonumuz ve vizyonumuz</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 leading-relaxed text-white/75">
+              <h3 class="text-xl font-semibold text-white">Misyonumuz</h3>
+              <p class="mt-4">
+                Sanayi ve çevresi için mühendislik çözümlerine ihtiyaç duyulan uygulamalarda ve yasal mevzuat kapsamında tüm tesislerinizde en yeni, en kapsamlı ve en kaliteli hizmeti zamanında sunmak, iş sürekliliğini güvence altına almak ve işletmelerin sorumluluklarını güvenle yerine getirmelerini sağlamak.
+              </p>
+            </article>
+            <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 leading-relaxed text-white/75">
+              <h3 class="text-xl font-semibold text-white">Vizyonumuz</h3>
+              <p class="mt-4">
+                Ülkemizdeki sanayi kuruluşları ve işletmeleri için bağımsızlık, tarafsızlık, dürüstlük ve müşteri memnuniyeti çerçevesinde, standartlarla uyumlu davranarak işletme, ekipman ve tesisleri güvenle kullanılabilir hale getirmek; işletmelere güven veren ve süreklilik sağlayan çözüm ortağı olmak.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="uzmanlar" class="fade-in delay-1 space-y-10">
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-[0.35em] text-[#f7a43d]">Uzman kadro</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Belgelendirilmiş mühendislik ekibimiz</h2>
+          </div>
+          <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 leading-relaxed text-white/75">
+            <p>
+              Hizmetlerimizi sanayi güvenliğini yakından takip eden, kendini sürekli olarak geliştiren ve yenilenen iş disiplinine sahip uzman kadromuz ile mevzuatlar kapsamında tahribatsız muayene ve periyodik kontrol hizmetleri olarak sunuyoruz.
+            </p>
+            <p class="mt-4">
+              İşletmelerin ihtiyaç duyduğu ve mevzuat zorunluluğu olan periyodik kontrolleri gerçekleştiren personelin yetkinlikleri, tecrübeleri ve yeterlilikleri işin doğruluğunu belirleyen temel unsurlardır. Bu nedenle ekibimizin tamamı TS EN ISO 9712 dahil ilgili standartlara göre eğitimlerini tamamlamış, belgeleri eksiksiz profesyonellerden oluşur.
+            </p>
+            <p class="mt-4">
+              Enerji Grup Teknik Mühendislik çatısı altında; makina mühendisi, elektrik-elektronik mühendisi, teknik öğretmen, NDT uzmanı, iş güvenliği uzmanı, yangın eğitmeni ve enerji kimlik uzmanı gibi disiplinlerden profesyoneller birlikte çalışır. Projelendirmeden uygulamaya uzanan tüm aşamalarda Türkiye genelindeki sanayi kuruluşlarına hizmet vermeyi hedefliyoruz.
+            </p>
+            <p class="mt-6 font-medium text-white">Zafer Korkut Yılmaz — Makina Mühendisi / NDT Uzmanı</p>
+          </article>
+        </section>
+        <section id="hizmetler" class="fade-in delay-2 space-y-10">
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-[0.35em] text-[#f7a43d]">Uzmanlık alanlarımız</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Hizmetlerimiz</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 text-base leading-relaxed text-white/80">
+              <h3 class="text-lg font-semibold text-white">Mekanik ve güvenlik kontrolleri</h3>
+              <ul class="mt-4 space-y-3 text-sm text-white/75">
+                <li>• Tahribatsız Muayene (VT, MT, PT, UT)</li>
+                <li>• Basınçlı Kaplar ve Kaldırma Araçları için Periyodik Kontrol</li>
+                <li>• Yangın Tesisatı ve ekipmanlarının periyodik kontrolleri</li>
+                <li>• Pompa performans ölçümleri ve verim analizleri</li>
+              </ul>
+            </article>
+            <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 text-base leading-relaxed text-white/80">
+              <h3 class="text-lg font-semibold text-white">Mühendislik ve danışmanlık</h3>
+              <ul class="mt-4 space-y-3 text-sm text-white/75">
+                <li>• 3. Taraf Gözetim Hizmetleri</li>
+                <li>• Elektrik Tesisatı, Parafudor ve Topraklama ölçümleri</li>
+                <li>• Endüstriyel rafların bilgisayar destekli statik analizi ve kapasite tayini</li>
+                <li>• Bilirkişilik, danışmanlık ve müşavirlik hizmetleri</li>
+                <li>• Sıhhi tesisat, ısıtma, havalandırma ve yangın tesisatı projelendirme</li>
+                <li>• Enerji kimlik belgesi hizmetleri</li>
+                <li>• AİTM (Araçların İmal, Tadil ve Montajı Hakkında Yönetmelik) projelendirme</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="ndt" class="fade-in delay-3 space-y-10">
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-[0.35em] text-[#f7a43d]">Denetim yaklaşımımız</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Tahribatsız Muayene Hizmetlerimiz</h2>
+          </div>
+          <div class="space-y-8">
+            <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 leading-relaxed text-white/75">
+              <p>
+                Tahribatsız muayene (Non Destructive Testing, NDT); kontrolü yapılacak olan malzeme, makine, ekipman ya da parçaların imalat aşamasında veya kullanım aşamasında yüzey ve yüzey altı hatalarının tespit edilmesini sağlayan yöntemleri kapsar. Kritik öneme sahip ekipmanlarda düzenli olarak uygulanan muayeneler, işletmelerin sürekliliğini güvence altına alırken olası hasarları ve yüksek maliyetleri önler.
+              </p>
+              <p class="mt-4">
+                Tahribatsız muayene yöntemleri; makine ve teçhizatların imalat standartları ile sertifikaları çerçevesinde değerlendirilir. Tüm süreçlerimiz TS EN ISO 9712 standardına göre sertifikalı personellerimiz tarafından yürütülür ve sonuç raporlarımız ilgili standartların tamamını kapsar.
+              </p>
+              <p class="mt-4">
+                Kullandığımız yöntemler arasında Gözle Muayene (VT), Sıvı Penetrant Muayene (PT), Manyetik Parçacık Muayene (MT), Ultrasonik Muayene (UT) ve gerektiğinde Radyografik Muayene (RT) bulunmaktadır. Yöntem seçimlerinde malzeme cinsi, kullanım amaçları ve ekipmanların maruz kaldığı çalışma koşulları dikkate alınır.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="periyodik" class="fade-in delay-3 space-y-10">
+          <div class="space-y-4">
+            <p class="text-xs uppercase tracking-[0.35em] text-[#f7a43d]">Sürekliliğinizi planlayın</p>
+            <h2 class="text-3xl font-semibold tracking-tight">Periyodik kontrol yaklaşımımız</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div class="rounded-[24px] border border-white/10 bg-[#08141b] p-6 text-sm leading-relaxed text-white/70">
+              <h3 class="text-base font-semibold text-white">TS ISO 5057 – Muayene aralıkları</h3>
+              <p class="mt-3">
+                TS ISO 5057 standardının 4. maddesi periyodik muayene aralıklarını, 5.2 maddesi ise yüzey çatlaklarına ilişkin kriterleri tanımlar. Kullanım sıklığı, çalışma ortamı ve üretici tavsiyeleri dikkate alınarak ekipmanlar için en fazla bir yıllık periyotlarla kontroller planlanır; kritik bulgular tespit edildiğinde muayene aralıkları sıklaştırılır.
+              </p>
+            </div>
+            <div class="rounded-[24px] border border-white/10 bg-[#08141b] p-6 text-sm leading-relaxed text-white/70">
+              <h3 class="text-base font-semibold text-white">İstif makineleri ve kaldırma ekipmanları</h3>
+              <p class="mt-3">
+                Forklift, transpalet ve personel kaldırma platformları için TS ISO 5057, TS EN ISO 3691-5 ve ilgili FEM standartları doğrultusunda yılda en az bir kez tahribatsız muayene yapılması önerilir. Ek ekipmanlarda bulunan çatlak, deformasyon ve aşınmalar erken tespit edilerek güvenli işletim sağlanır.
+              </p>
+            </div>
+            <div class="rounded-[24px] border border-white/10 bg-[#08141b] p-6 text-sm leading-relaxed text-white/70">
+              <h3 class="text-base font-semibold text-white">Beton pompaları ve mevzuat</h3>
+              <p class="mt-3">
+                EN 12001 standardı, beton pompaları ve dağıtım kollarının periyodik kontrollerini zorunlu kılar. Söz konusu standart TSE tarafından TS EN 12001 adıyla yayımlanmış olup, 10.04.2013 tarihli resmi duyuruda kontrollerin yetkili uzmanlar tarafından yapılması gerektiği belirtilmiştir. Çalışma ve Sosyal Güvenlik Bakanlığı yayınları da beton pompalarının her yıl yetkili uzmanlara kontrol ettirilmesi gerektiğini vurgular.
+              </p>
+            </div>
+          </div>
+
+          <article class="rounded-[28px] border border-white/10 bg-[#07131a] p-8 leading-relaxed text-white/75">
+            <h3 class="text-xl font-semibold text-white">Periyodik kontrol kapsamımız</h3>
+            <ul class="mt-4 space-y-3 text-sm text-white/75">
+              <li>• Basınçlı kaplar, hava tankları ve hidrofor sistemlerinde sızdırmazlık, dayanım ve emniyet aksesuarı kontrolleri</li>
+              <li>• Kaldırma iletme ekipmanlarında (vinç, caraskal, platform, forklift) yapısal bütünlük, güvenlik ekipmanları ve NDT kontrolleri</li>
+              <li>• Pompa performans testlerinde debi, basınç, enerji tüketimi ve verim ölçümleri</li>
+              <li>• Elektrik tesisatı, parafudor ve topraklama ölçümlerinde ulusal standartlara uygunluk değerlendirmesi</li>
+            </ul>
+          </article>
+        </section>
+
+      </main>
+
+      <footer id="iletisim" class="border-t border-white/10 bg-[#040b0f]">
+        <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 py-12 sm:px-10 lg:px-20">
+          <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr]">
+            <div class="space-y-4 text-white/70">
+              <div class="flex items-center gap-3 text-white">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-dashed border-white/30 bg-white/5 text-xs uppercase tracking-[0.3em] text-white/60">
+                  Logo
+                </div>
+                <span class="text-lg font-semibold tracking-tight text-white">Enerji Grup Teknik Mühendislik</span>
+              </div>
+              <p class="text-sm leading-relaxed">
+                Enerji altyapısı, tesis güvenliği ve mevzuata uyum gereksinimlerinize yönelik tüm mühendislik, danışmanlık ve denetim çalışmalarında yanınızdayız.
+              </p>
+            </div>
+            <div class="space-y-4 text-sm text-white/70">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#f5c15c]">İletişim</h3>
+              <ul class="space-y-2">
                 <li><strong class="text-white">Adres:</strong> Adres bilgilerinizi buraya ekleyin.</li>
                 <li><strong class="text-white">Telefon:</strong> Telefon numaranızı buraya ekleyin.</li>
-                <li><strong class="text-white">E-posta:</strong> E-posta adresinizi buraya ekleyin.</li>
+                <li><strong class="text-white">E-posta:</strong> info@enerjigrupteknik.com</li>
               </ul>
             </div>
-            <div class="space-y-4">
-              <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#f5c15c]">Hızlı Bağlantılar</h3>
-              <ul class="space-y-3 text-sm text-white/65">
+            <div class="space-y-4 text-sm text-white/70">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#f5c15c]">Hızlı bağlantılar</h3>
+              <ul class="space-y-2">
+                <li><a class="transition hover:text-white" href="#hakkimizda">Kurumsal</a></li>
                 <li><a class="transition hover:text-white" href="#hizmetler">Hizmetler</a></li>
-                <li><a class="transition hover:text-white" href="#projeler">Projeler</a></li>
-                <li><a class="transition hover:text-white" href="#hakkimizda">Hakkımızda</a></li>
+                <li><a class="transition hover:text-white" href="#ndt">Tahribatsız Muayene</a></li>
                 <li><a class="transition hover:text-white" href="#">KVKK &amp; Politikalar</a></li>
               </ul>
             </div>
           </div>
           <div class="flex flex-col gap-4 border-t border-white/5 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2024 Enerji Grup Teknik. Tüm hakları saklıdır.</p>
-            <p>Profesyonel mühendislik çözümlerinde sürdürülebilirlik odaklı yaklaşım.</p>
+            <p>© 2024 Enerji Grup Teknik Mühendislik. Tüm hakları saklıdır.</p>
+            <p>Bağımsız, tarafsız ve belgelendirilmiş denetim hizmetleri.</p>
           </div>
         </div>
       </footer>
     </div>
+
     <script>
       const toggleButton = document.getElementById("mobile-menu-toggle");
       const mobileNav = document.getElementById("mobile-navigation");
