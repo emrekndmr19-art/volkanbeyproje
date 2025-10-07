@@ -97,7 +97,7 @@
   <body class="antialiased">
     <div class="relative min-h-screen overflow-x-hidden">
       <header class="border-b border-[#4d7796]/20 bg-gradient-to-r from-[#0f1c2b]/95 via-[#162a3b]/90 to-[#0f1c2b]/95 shadow-[0_10px_30px_rgba(8,18,27,0.45)] backdrop-blur">
-        <div class="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-6 px-6 py-4 sm:px-10 lg:px-20">
+        <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-10 lg:px-20">
           <div class="flex items-center gap-4">
             <div class="h-12 w-12 rounded-2xl border border-dashed border-white/20 bg-white/10 p-1 text-xs text-white/70">
               <div class="flex h-full w-full items-center justify-center text-center">
@@ -109,7 +109,7 @@
               <h1 class="text-lg font-semibold tracking-tight text-white">Enerji Grup Teknik Mühendislik</h1>
             </div>
           </div>
-          <div class="flex items-center gap-4">
+          <div class="flex w-full items-center justify-end gap-4 sm:w-auto">
             <button
               id="mobile-menu-toggle"
               class="inline-flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-white/30 hover:bg-white/20 lg:hidden"
@@ -146,8 +146,8 @@
         </nav>
       </header>
 
-      <main class="mx-auto flex w-full max-w-[1200px] flex-col gap-16 px-6 py-16 sm:px-10 lg:px-20">
-        <section class="grid items-center gap-12 rounded-[32px] border border-white/10 bg-gradient-to-br from-[#142536]/95 via-[#1a3044]/90 to-[#0f1c2b]/95 p-10 shadow-[0_25px_60px_rgba(5,12,16,0.55)] lg:grid-cols-[1.2fr_0.8fr]">
+      <main class="mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-5 py-12 sm:gap-16 sm:px-10 sm:py-16 lg:px-20">
+        <section class="grid items-center gap-8 rounded-[32px] border border-white/10 bg-gradient-to-br from-[#142536]/95 via-[#1a3044]/90 to-[#0f1c2b]/95 p-6 shadow-[0_25px_60px_rgba(5,12,16,0.55)] sm:gap-10 sm:p-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
           <div class="space-y-6">
             <p class="text-sm uppercase tracking-[0.3em] text-[#a87444]">Mühendislikte güven</p>
             <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Enerji altyapısına yönelik bağımsız ve tarafsız teknik çözümler</h2>
@@ -164,7 +164,7 @@
             </div>
           </div>
           <div class="space-y-6">
-            <div class="rounded-[28px] border border-dashed border-white/20 bg-white/10 p-8 text-center text-sm text-white/70">
+            <div class="rounded-[28px] border border-dashed border-white/20 bg-white/10 p-6 text-center text-sm text-white/70 sm:p-8">
               <p class="font-medium text-white">Logo için ayrılan alan</p>
               <p class="mt-2 leading-relaxed text-white/70">
                 Firmanızın güncel logosunu bu alana ekleyebilirsiniz. Görsel oranı 1:1 olacak şekilde (ör. 600×600px PNG) eklenmesi önerilir.
@@ -189,7 +189,7 @@
           </div>
           <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] transition hover:-translate-y-1 hover:border-[#a87444]/60" href="hakkimizda.html">
-              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Kurumsal binayı temsil eden gece ışıkları" loading="lazy" />
+              <img class="h-40 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 sm:h-48" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Kurumsal binayı temsil eden gece ışıkları" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
               <div class="relative space-y-3 p-6">
                 <p class="text-xs uppercase tracking-[0.3em] text-[#a87444]">Kurumsal</p>
@@ -199,7 +199,7 @@
               </div>
             </a>
             <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] transition hover:-translate-y-1 hover:border-[#a87444]/60" href="misyon-vizyon.html">
-              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Soyut ışıklarla çizilmiş vizyon konsepti" loading="lazy" />
+              <img class="h-40 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 sm:h-48" src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Soyut ışıklarla çizilmiş vizyon konsepti" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
               <div class="relative space-y-3 p-6">
                 <p class="text-xs uppercase tracking-[0.3em] text-[#a87444]">Strateji</p>
@@ -209,7 +209,7 @@
               </div>
             </a>
             <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] transition hover:-translate-y-1 hover:border-[#a87444]/60" href="uzman-kadro.html">
-              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1581091870627-3fdc0086580d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Teknik ekip çalışmasını temsil eden görsel" loading="lazy" />
+              <img class="h-40 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 sm:h-48" src="https://images.unsplash.com/photo-1581091870627-3fdc0086580d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Teknik ekip çalışmasını temsil eden görsel" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
               <div class="relative space-y-3 p-6">
                 <p class="text-xs uppercase tracking-[0.3em] text-[#a87444]">Ekip</p>
@@ -219,7 +219,7 @@
               </div>
             </a>
             <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] transition hover:-translate-y-1 hover:border-[#a87444]/60" href="hizmetler.html">
-              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Endüstriyel tesislerde mühendislik hizmetlerini simgeleyen görsel" loading="lazy" />
+              <img class="h-40 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 sm:h-48" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Endüstriyel tesislerde mühendislik hizmetlerini simgeleyen görsel" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
               <div class="relative space-y-3 p-6">
                 <p class="text-xs uppercase tracking-[0.3em] text-[#a87444]">Çözümler</p>
@@ -229,7 +229,7 @@
               </div>
             </a>
             <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] transition hover:-translate-y-1 hover:border-[#a87444]/60" href="ndt.html">
-              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Tahribatsız muayene ekipmanı" loading="lazy" />
+              <img class="h-40 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 sm:h-48" src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Tahribatsız muayene ekipmanı" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
               <div class="relative space-y-3 p-6">
                 <p class="text-xs uppercase tracking-[0.3em] text-[#a87444]">Denetim</p>
@@ -239,7 +239,7 @@
               </div>
             </a>
             <a class="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] transition hover:-translate-y-1 hover:border-[#a87444]/60" href="periyodik-kontroller.html">
-              <img class="h-48 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Periyodik kontrol ve bakım süreçlerini temsil eden görsel" loading="lazy" />
+              <img class="h-40 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 sm:h-48" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Periyodik kontrol ve bakım süreçlerini temsil eden görsel" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
               <div class="relative space-y-3 p-6">
                 <p class="text-xs uppercase tracking-[0.3em] text-[#a87444]">Süreklilik</p>
@@ -255,9 +255,9 @@
       <footer class="footer-modern relative mt-20 overflow-hidden bg-gradient-to-br from-[#0f1c2b] via-[#162a3b] to-[#0b1621] text-white">
         <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#4d7796]/20 blur-3xl"></div>
         <div class="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#a87444]/20 blur-3xl"></div>
-        <div class="mx-auto w-full max-w-[1200px] px-6 py-16 sm:px-10 lg:px-20">
-          <div class="flex flex-col gap-12">
-            <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div class="mx-auto w-full max-w-[1200px] px-5 py-12 sm:px-10 sm:py-16 lg:px-20">
+          <div class="flex flex-col gap-10">
+            <div class="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div class="space-y-5">
                 <span class="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] text-[#c9d6df]">Enerji Grup Teknik</span>
                 <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Geleceğin enerjisini birlikte inşa edelim</h2>
@@ -273,7 +273,7 @@
                 </svg>
               </a>
             </div>
-            <div class="grid gap-10 rounded-[28px] border border-white/10 bg-white/5 p-8 lg:grid-cols-[1.2fr_1fr_1fr]">
+            <div class="grid gap-8 rounded-[28px] border border-white/10 bg-white/5 p-6 sm:gap-10 sm:p-8 lg:grid-cols-[1.2fr_1fr_1fr]">
               <div class="space-y-4 text-white/80">
                 <div class="flex items-center gap-4 text-white">
                   <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-dashed border-white/25 bg-white/15 text-[10px] uppercase tracking-[0.3em] text-white/70">
