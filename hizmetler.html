@@ -16,20 +16,22 @@
     <style>
       :root {
         color-scheme: dark;
-        --color-navy: #0b1621;
-        --color-ocean: #142536;
-        --color-sky: #4d7796;
-        --color-sand: #a87444;
-        --color-amber: #c69054;
-        --color-cloud: #d6dbe1;
+        --color-midnight: #07182d;
+        --color-abyss: #0a233d;
+        --color-royal: #143e63;
+        --color-ice: #f3f6fb;
+        --color-copper: #b9824b;
+        --color-amber: #d79d60;
+        --color-mist: #9bb5d4;
       }
 
       body {
         font-family: "Space Grotesk", "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: radial-gradient(circle at 15% 15%, rgba(77, 119, 150, 0.22), transparent 55%),
-          radial-gradient(circle at 80% 0%, rgba(198, 144, 84, 0.18), transparent 45%),
-          linear-gradient(135deg, #0a141d, #101c28 45%, #0b1621 100%);
-        color: var(--color-cloud);
+        background:
+          radial-gradient(circle at 12% 18%, rgba(59, 133, 198, 0.25), transparent 55%),
+          radial-gradient(circle at 78% 12%, rgba(215, 157, 96, 0.22), transparent 48%),
+          linear-gradient(135deg, #061528, #0c2747 42%, #07182d 100%);
+        color: var(--color-ice);
       }
 
       a {
@@ -82,8 +84,8 @@
       }
 
       .footer-modern::before {
-        background: radial-gradient(circle at 15% 20%, rgba(77, 119, 150, 0.35), transparent 55%),
-          radial-gradient(circle at 85% 10%, rgba(167, 116, 68, 0.28), transparent 45%);
+        background: radial-gradient(circle at 15% 20%, rgba(59, 133, 198, 0.32), transparent 55%),
+          radial-gradient(circle at 85% 10%, rgba(185, 130, 75, 0.32), transparent 45%);
         opacity: 0.8;
       }
 
@@ -96,7 +98,7 @@
   </head>
   <body class="antialiased">
     <div class="relative min-h-screen overflow-x-hidden">
-      <header class="border-b border-[#4d7796]/20 bg-gradient-to-r from-[#0f1c2b]/95 via-[#162a3b]/90 to-[#0f1c2b]/95 shadow-[0_10px_30px_rgba(8,18,27,0.45)] backdrop-blur">
+      <header class="border-b border-[#3f85c6]/25 bg-gradient-to-r from-[#0a233d]/95 via-[#13375a]/90 to-[#0a233d]/95 shadow-[0_10px_30px_rgba(6,20,40,0.5)] backdrop-blur">
         <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-10 lg:px-20">
           <div class="flex items-center gap-4">
             <div class="h-12 w-12 rounded-2xl border border-dashed border-white/20 bg-white/10 p-1 text-xs text-white/70">
@@ -105,7 +107,7 @@
               </div>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-[0.4em] text-[#a87444]">Enerji Grup Teknik</p>
+              <p class="text-xs uppercase tracking-[0.4em] text-[#b9824b]">Enerji Grup Teknik</p>
               <h1 class="text-lg font-semibold tracking-tight text-white">Enerji Grup Teknik Mühendislik</h1>
             </div>
           </div>
@@ -133,7 +135,7 @@
             </nav>
           </div>
         </div>
-        <nav id="mobile-navigation" class="hidden border-t border-white/10 bg-[#0d1b27] lg:hidden">
+        <nav id="mobile-navigation" class="hidden border-t border-white/10 bg-[#0a2035] lg:hidden">
           <div class="flex flex-col px-6 py-4 text-sm text-white/85">
             <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="index.html">Anasayfa</a>
             <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="hakkimizda.html">Hakkımızda</a>
@@ -147,13 +149,13 @@
       </header>
 
       <main class="mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-5 py-12 sm:gap-16 sm:px-10 sm:py-16 lg:px-20">
-        <section class="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#142536]/95 via-[#1a3044]/90 to-[#0f1c2b]/95 shadow-[0_25px_60px_rgba(5,12,16,0.55)]">
+        <section class="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0f2a45]/95 via-[#163d5f]/90 to-[#0a233d]/95 shadow-[0_25px_60px_rgba(5,12,16,0.55)]">
           <div class="grid items-center gap-8 p-6 sm:gap-10 sm:p-10 lg:grid-cols-[1.05fr_0.95fr]">
             <div class="space-y-6">
-              <p class="text-xs uppercase tracking-[0.35em] text-[#a87444]">Uzmanlık alanlarımız</p>
+              <p class="text-xs uppercase tracking-[0.35em] text-[#b9824b]">Uzmanlık alanlarımız</p>
               <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Mühendislik çözümlerimiz</h2>
               <p class="text-base leading-relaxed text-white/80">
-                Enerji Grup Teknik Mühendislik olarak periyodik kontrol, tahribatsız muayene ve danışmanlık süreçlerini tek çatı altında toplayarak işletmelerin mevzuata uyumunu ve güvenliğini sağlıyoruz.
+                Periyodik kontrolleri, tahribatsız muayeneleri ve danışmanlık süreçlerini tek merkezden yöneterek tesislerinizin mevzuata uyumunu ve operasyon güvenliğini güçlendiriyoruz.
               </p>
             </div>
             <div class="relative h-full min-h-[220px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[280px]">
@@ -165,7 +167,7 @@
 
         <section class="fade-in space-y-10">
           <div class="grid gap-6 lg:grid-cols-2">
-            <article class="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-base leading-relaxed text-white/80 sm:p-8">
+            <article class="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-base leading-relaxed text-white/80 sm:p-8">
               <h3 class="text-lg font-semibold text-white">Mekanik ve güvenlik kontrolleri</h3>
               <ul class="mt-4 space-y-3 text-sm text-white/75">
                 <li>• Tahribatsız Muayene (VT, MT, PT, UT)</li>
@@ -174,7 +176,7 @@
                 <li>• Pompa performans ölçümleri ve verim analizleri</li>
               </ul>
             </article>
-            <article class="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-base leading-relaxed text-white/80 sm:p-8">
+            <article class="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-base leading-relaxed text-white/80 sm:p-8">
               <h3 class="text-lg font-semibold text-white">Mühendislik ve danışmanlık</h3>
               <ul class="mt-4 space-y-3 text-sm text-white/75">
                 <li>• 3. Taraf Gözetim Hizmetleri</li>
@@ -190,51 +192,50 @@
         </section>
 
         <section class="fade-in space-y-8">
-          <div class="space-y-6 rounded-[32px] border border-[#a87444]/30 bg-gradient-to-br from-[#171f2c]/95 via-[#1d2b3a]/90 to-[#101722]/95 p-6 text-white/80 sm:p-10">
-            <p class="text-xs uppercase tracking-[0.32em] text-[#c69054]">Kaynaklı imalat süreçleri</p>
-            <h3 class="text-2xl font-semibold tracking-tight text-white">Broşürden aktarılan hizmet kapsamı</h3>
+          <div class="space-y-6 rounded-[32px] border border-[#b9824b]/30 bg-gradient-to-br from-[#171f2c]/95 via-[#1d2b3a]/90 to-[#101722]/95 p-6 text-white/80 sm:p-10">
+            <p class="text-xs uppercase tracking-[0.32em] text-[#d79d60]">Kaynaklı imalat çözümleri</p>
+            <h3 class="text-2xl font-semibold tracking-tight text-white">Kaynak süreçlerine yönelik uzman desteğimiz</h3>
             <p>
-              Kaynak; basınç kaplarından köprülere, boru hatlarından endüstriyel tesislere kadar pek çok yapıda maliyet ve ürün kalitesi üzerinde kritik
-              rol oynayan bir imalat yöntemidir. Kaynaklı imalat gerçekleştiren üreticilerin ve ürünlerin (metal yapılar, basınç kapları vb.) kalite güvence
-              süreçlerinin uluslararası standart ve direktiflere göre sertifikalandırılması ve belgelendirilmesi gerekir.
+              Basınçlı kaplar, köprüler, boru hatları ve ağır sanayi tesisleri gibi yapılarda kaynak operasyonları maliyet ve ürün kalitesi üzerinde belirleyicidir.
+              Bu üretimleri gerçekleştiren işletmelerin ve ürünlerin uluslararası standart ve direktiflere göre doğrulanması ve belgelendirilmesi zorunludur.
             </p>
             <p>
-              Enerji Grup Teknik Mühendislik, kaynaklı imalata yönelik onay, belgelendirme ve gözetim çalışmalarında uluslararası çözüm ortaklarıyla yanınızdadır.
-              Uzman mühendis ekibimiz kaynaklı üretim süreçlerinde sahadan raporlamaya kadar uçtan uca destek verir.
+              Enerji Grup Teknik Mühendislik, kaynaklı imalat projelerinde onay, belgelendirme ve gözetim gereksinimlerini uluslararası çözüm ortaklarıyla birlikte yönetir.
+              Uzman mühendis ekibimiz saha çalışmalarından raporlamaya kadar her aşamada kesintisiz destek sağlar.
             </p>
           </div>
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-white/80">
+            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
               <h4 class="text-lg font-semibold text-white">Mekanik kaynak gözetimi</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynaklı imalatın her aşamasında proseslerin standartlara uygunluğunu denetliyor, üretim kayıtlarını takip ediyoruz.</p>
+              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynaklı imalat aşamalarında süreçleri standartlara göre denetliyor, üretim kayıtlarının düzenli tutulmasını sağlıyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-white/80">
+            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
               <h4 class="text-lg font-semibold text-white">Kaynak metodu onayları</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">İşletmeler için kaynak metodları işletme onaylarını hazırlıyor, prosedürleri dokümante ederek denetimlerden geçmenizi sağlıyoruz.</p>
+              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak yöntem onaylarını hazırlıyor, prosedürlerinizi belgelerle destekleyerek denetimlerden sorunsuz geçmenizi sağlıyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-white/80">
+            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
               <h4 class="text-lg font-semibold text-white">Kaynakçı sertifikasyonu</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak personelinizin (WPQ) yeterliliklerini değerlendiriyor, ulusal ve uluslararası standartlarda sertifikasyon süreçlerini yönetiyoruz.</p>
+              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak personelinizin (WPQ) yeterliliklerini değerlendiriyor, ulusal ve uluslararası standartlara uygun sertifikasyon süreçlerini yönetiyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-white/80">
+            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
               <h4 class="text-lg font-semibold text-white">WPS hazırlığı</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak prosedür şartnamelerini (WPS) oluşturup WPQR testlerini organize ederek dokümantasyonunuzu tamamlıyoruz.</p>
+              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak prosedür şartnamelerini (WPS) oluşturuyor, WPQR testlerini organize ederek dokümantasyonunuzu eksiksiz tamamlıyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-white/80">
+            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
               <h4 class="text-lg font-semibold text-white">Kaynak testleri ve muayeneleri</h4>
               <p class="mt-3 text-sm leading-relaxed text-white/75">Tahribatsız ve tahribatlı testleri planlayarak kaynaklı birleşimlerin dayanımını doğruluyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#101e2a] via-[#132434] to-[#0d1824] p-6 text-white/80">
+            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
               <h4 class="text-lg font-semibold text-white">ISO 3834 &amp; ISO 9001 entegrasyonu</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynaklı imalat sistemleriniz için ISO 3834 ve ISO 9001 gerekliliklerini kurarak sürdürülebilir kalite yönetim altyapısı oluşturuyoruz.</p>
+              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynaklı imalat süreçlerinizde ISO 3834 ve ISO 9001 gerekliliklerini kurarak sürdürülebilir kalite yönetim altyapısı oluşturuyoruz.</p>
             </div>
           </div>
         </section>
       </main>
 
-      <footer class="footer-modern relative mt-20 overflow-hidden bg-gradient-to-br from-[#0f1c2b] via-[#162a3b] to-[#0b1621] text-white">
-        <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#4d7796]/20 blur-3xl"></div>
-        <div class="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#a87444]/20 blur-3xl"></div>
+      <footer class="footer-modern relative mt-20 overflow-hidden bg-gradient-to-br from-[#0a233d] via-[#13375a] to-[#07182d] text-white">
+        <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3f85c6]/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#b9824b]/20 blur-3xl"></div>
         <div class="mx-auto w-full max-w-[1200px] px-5 py-12 sm:px-10 sm:py-16 lg:px-20">
           <div class="flex flex-col gap-10">
             <div class="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -242,10 +243,10 @@
                 <span class="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] text-[#c9d6df]">Enerji Grup Teknik</span>
                 <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Geleceğin enerjisini birlikte inşa edelim</h2>
                 <p class="max-w-xl text-sm leading-relaxed text-white/75">
-                  Saha deneyimimiz ve yetkili mühendis kadromuzla enerji altyapısındaki riskleri görünür kılıyor, tesis güvenliğini artıran çağdaş çözümler üretiyoruz.
+                  Yetkin mühendis kadromuzla enerji altyapısındaki kritik riskleri analiz ediyor, işletmelerin güvenliğini güçlendiren çağdaş çözümler geliştiriyoruz.
                 </p>
               </div>
-              <a class="inline-flex items-center justify-center gap-2 rounded-full border border-[#a87444]/40 bg-gradient-to-r from-[#a87444] via-[#c69054] to-[#4d7796] px-8 py-3 text-sm font-semibold text-[#0b1520] shadow-[0_15px_45px_rgba(10,25,36,0.55)] transition hover:scale-105" href="mailto:info@enerjigrupteknik.com">
+              <a class="inline-flex items-center justify-center gap-2 rounded-full border border-[#b9824b]/40 bg-gradient-to-r from-[#b9824b] via-[#d79d60] to-[#3f85c6] px-8 py-3 text-sm font-semibold text-[#081a2c] shadow-[0_15px_45px_rgba(10,25,36,0.55)] transition hover:scale-105" href="mailto:info@enerjigrupteknik.com">
                 İletişime Geç
                 <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -260,16 +261,16 @@
                     Logo
                   </div>
                   <div>
-                    <p class="text-xs uppercase tracking-[0.3em] text-[#a87444]">Enerji Grup Teknik</p>
+                    <p class="text-xs uppercase tracking-[0.3em] text-[#b9824b]">Enerji Grup Teknik</p>
                     <span class="text-lg font-semibold tracking-tight text-white">Enerji Grup Teknik Mühendislik</span>
                   </div>
                 </div>
                 <p class="text-sm leading-relaxed text-white/75">
-                  Enerji altyapısı, tesis güvenliği ve mevzuata uyum gereksinimlerinize yönelik tüm mühendislik, danışmanlık ve denetim çalışmalarında yanınızdayız.
+                  Enerji altyapısı, tesis güvenliği ve mevzuata uyum ihtiyaçlarınızda mühendislikten danışmanlığa tüm süreçlerde yanınızdayız.
                 </p>
               </div>
               <div class="space-y-4 text-sm text-white/75">
-                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[#c69054]">İletişim</h3>
+                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[#d79d60]">İletişim</h3>
                 <ul class="space-y-2">
                   <li><strong class="text-white">Adres:</strong> Adres bilgilerinizi buraya ekleyin.</li>
                   <li><strong class="text-white">Telefon:</strong> Telefon numaranızı buraya ekleyin.</li>
@@ -277,7 +278,7 @@
                 </ul>
               </div>
               <div class="space-y-4 text-sm text-white/75">
-                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[#c69054]">Hızlı bağlantılar</h3>
+                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[#d79d60]">Hızlı bağlantılar</h3>
                 <ul class="space-y-2">
                   <li><a class="transition hover:text-white" href="hakkimizda.html">Kurumsal</a></li>
                   <li><a class="transition hover:text-white" href="hizmetler.html">Hizmetler</a></li>
