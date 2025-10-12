@@ -15,23 +15,30 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style>
       :root {
-        color-scheme: dark;
-        --color-midnight: #07182d;
-        --color-abyss: #0a233d;
-        --color-royal: #143e63;
-        --color-ice: #f3f6fb;
-        --color-copper: #b9824b;
-        --color-amber: #d79d60;
-        --color-mist: #9bb5d4;
+        color-scheme: light;
+        --color-ink: #0b1f36;
+        --color-ink-soft: #2f3e5c;
+        --color-ink-muted: #51607a;
+        --color-cloud: #f6f8ff;
+        --color-foam: #ffffff;
+        --color-electric: #123875;
+        --color-azure: #4aa6ff;
+        --color-ember: #ff7a29;
+        --color-amber: #ffb15c;
+        --color-border: rgba(18, 56, 117, 0.12);
+        --color-highlight: rgba(74, 166, 255, 0.16);
+        --radius-xl: 32px;
       }
 
       body {
         font-family: "Space Grotesk", "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
-          radial-gradient(circle at 12% 18%, rgba(59, 133, 198, 0.25), transparent 55%),
-          radial-gradient(circle at 78% 12%, rgba(215, 157, 96, 0.22), transparent 48%),
-          linear-gradient(135deg, #061528, #0c2747 42%, #07182d 100%);
-        color: var(--color-ice);
+          radial-gradient(circle at 12% 18%, rgba(74, 166, 255, 0.18), transparent 55%),
+          radial-gradient(circle at 78% 12%, rgba(255, 122, 41, 0.14), transparent 48%),
+          linear-gradient(180deg, var(--color-foam), var(--color-cloud));
+        color: var(--color-ink);
+        position: relative;
+        min-height: 100vh;
       }
 
       a {
@@ -47,6 +54,40 @@
         100% {
           opacity: 1;
           transform: translateY(0);
+        }
+      }
+
+      @keyframes aurora-flow {
+        0% {
+          transform: translate3d(-10%, -10%, 0) scale(1);
+          opacity: 0.45;
+        }
+
+        50% {
+          transform: translate3d(15%, 10%, 0) scale(1.08);
+          opacity: 0.75;
+        }
+
+        100% {
+          transform: translate3d(-5%, -5%, 0) scale(1.02);
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes pulse-orbit {
+        0% {
+          transform: translate3d(0, 0, 0) scale(1);
+          opacity: 0.75;
+        }
+
+        50% {
+          transform: translate3d(8px, -12px, 0) scale(1.08);
+          opacity: 1;
+        }
+
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+          opacity: 0.75;
         }
       }
 
@@ -68,11 +109,149 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .fade-in {
-          animation: none;
-          opacity: 1;
-          transform: none;
+        .fade-in,
+        .futuristic-shell::before,
+        .floating-orb {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
         }
+      }
+
+      .futuristic-shell {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .futuristic-shell::before {
+        content: "";
+        position: fixed;
+        inset: -120px;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(74, 166, 255, 0.12), transparent 60%),
+          radial-gradient(circle at 80% 25%, rgba(255, 122, 41, 0.12), transparent 55%),
+          conic-gradient(from 180deg at 50% 50%, rgba(10, 45, 105, 0.18), transparent 50%);
+        filter: blur(0px);
+        z-index: -2;
+        animation: aurora-flow 18s ease-in-out infinite;
+      }
+
+      .futuristic-shell::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(rgba(18, 56, 117, 0.08) 1px, transparent 0);
+        background-size: 60px 60px;
+        opacity: 0.35;
+        z-index: -3;
+      }
+
+      .floating-orb {
+        position: absolute;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.92), rgba(74, 166, 255, 0.45));
+        filter: blur(0.4px);
+        box-shadow: 0 24px 60px rgba(18, 56, 117, 0.18);
+        animation: pulse-orbit 12s ease-in-out infinite;
+      }
+
+      .floating-orb.orb-2 {
+        background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.9), rgba(255, 122, 41, 0.45));
+        animation-duration: 16s;
+        animation-delay: 1.2s;
+      }
+
+      .futuristic-header {
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(18, 56, 117, 0.08);
+        box-shadow: 0 18px 50px rgba(11, 31, 54, 0.08);
+      }
+
+      .futuristic-header .nav-link {
+        position: relative;
+        padding: 0.25rem 0;
+      }
+
+      .futuristic-header .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.4rem;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(90deg, var(--color-electric), var(--color-ember));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+      }
+
+      .futuristic-header .nav-link:hover::after,
+      .futuristic-header .nav-link[aria-current="page"]::after {
+        transform: scaleX(1);
+      }
+
+      .futuristic-panel {
+        background: var(--color-card, rgba(255, 255, 255, 0.82));
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        box-shadow:
+          0 24px 60px rgba(11, 31, 54, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .futuristic-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(74, 166, 255, 0.16), rgba(255, 255, 255, 0));
+        opacity: 0.9;
+        pointer-events: none;
+      }
+
+      .futuristic-panel > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .futuristic-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 28px;
+        border: 1px solid rgba(18, 56, 117, 0.08);
+        box-shadow: 0 20px 50px rgba(12, 33, 72, 0.08);
+        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.45s ease;
+        overflow: hidden;
+      }
+
+      .futuristic-card:hover {
+        transform: translateY(-10px) scale(1.01);
+        border-color: rgba(255, 122, 41, 0.35);
+        box-shadow: 0 30px 70px rgba(18, 56, 117, 0.16);
+      }
+
+      .futuristic-card img {
+        mix-blend-mode: multiply;
+      }
+
+      .badge-soft {
+        background: rgba(74, 166, 255, 0.12);
+        color: var(--color-electric);
+        border: 1px solid rgba(74, 166, 255, 0.25);
+      }
+
+      .badge-ember {
+        background: rgba(255, 122, 41, 0.12);
+        color: var(--color-ember);
+        border: 1px solid rgba(255, 122, 41, 0.2);
+      }
+
+      .footer-modern {
+        position: relative;
+        background: linear-gradient(135deg, #0b1f36 0%, #123875 55%, #0b1f36 100%);
+        color: #f5f7ff;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
       }
 
       .footer-modern::before,
@@ -84,37 +263,40 @@
       }
 
       .footer-modern::before {
-        background: radial-gradient(circle at 15% 20%, rgba(59, 133, 198, 0.32), transparent 55%),
-          radial-gradient(circle at 85% 10%, rgba(185, 130, 75, 0.32), transparent 45%);
-        opacity: 0.8;
+        background:
+          radial-gradient(circle at 15% 20%, rgba(74, 166, 255, 0.45), transparent 55%),
+          radial-gradient(circle at 85% 15%, rgba(255, 122, 41, 0.35), transparent 50%);
+        opacity: 0.9;
+        mix-blend-mode: screen;
       }
 
       .footer-modern::after {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 60%);
-        mix-blend-mode: screen;
-        opacity: 0.4;
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 60%);
+        opacity: 0.6;
       }
     </style>
   </head>
-  <body class="antialiased">
-    <div class="relative min-h-screen overflow-x-hidden">
-      <header class="border-b border-[#3f85c6]/25 bg-gradient-to-r from-[#0a233d]/95 via-[#13375a]/90 to-[#0a233d]/95 shadow-[0_10px_30px_rgba(6,20,40,0.5)] backdrop-blur">
+  <body class="antialiased text-[color:var(--color-ink)]">
+    <div class="futuristic-shell relative min-h-screen overflow-x-hidden">
+      <span class="floating-orb orb-1 -left-20 top-32 hidden h-44 w-44 lg:block"></span>
+      <span class="floating-orb orb-2 -right-28 top-1/3 hidden h-56 w-56 lg:block"></span>
+      <header class="futuristic-header">
         <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-10 lg:px-20">
           <div class="flex items-center gap-4">
-            <div class="h-12 w-12 rounded-2xl border border-dashed border-white/20 bg-white/10 p-1 text-xs text-white/70">
+            <div class="h-12 w-12 rounded-2xl border border-dashed border-[rgba(18,56,117,0.14)] bg-[rgba(74,166,255,0.08)] p-1 text-xs text-[color:var(--color-ink-muted)]">
               <div class="flex h-full w-full items-center justify-center text-center">
                 Logo Alanı<br />400×400px
               </div>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-[0.4em] text-[#b9824b]">Enerji Grup Teknik</p>
-              <h1 class="text-lg font-semibold tracking-tight text-white">Enerji Grup Teknik Mühendislik</h1>
+              <p class="text-xs uppercase tracking-[0.4em] text-[color:var(--color-ember)]">Enerji Grup Teknik</p>
+              <h1 class="text-lg font-semibold tracking-tight text-[color:var(--color-ink)]">Enerji Grup Teknik Mühendislik</h1>
             </div>
           </div>
           <div class="flex w-full items-center justify-end gap-4 sm:w-auto">
             <button
               id="mobile-menu-toggle"
-              class="inline-flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:border-white/30 hover:bg-white/20 lg:hidden"
+              class="inline-flex size-10 items-center justify-center rounded-full border border-[rgba(18,56,117,0.12)] bg-white/80 text-[color:var(--color-ink)] transition hover:border-[rgba(18,56,117,0.3)] hover:bg-white lg:hidden"
               aria-label="Menüyü aç"
               aria-expanded="false"
             >
@@ -124,129 +306,127 @@
                 <path d="M4 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
               </svg>
             </button>
-            <nav class="hidden items-center gap-8 text-sm font-medium text-white/75 lg:flex">
-              <a class="transition hover:text-white" href="index.html">Anasayfa</a>
-              <a class="transition hover:text-white" href="hakkimizda.html">Hakkımızda</a>
-              <a class="transition hover:text-white" href="misyon-vizyon.html">Misyon &amp; Vizyon</a>
-              <a class="transition hover:text-white" href="uzman-kadro.html">Uzman Kadro</a>
-              <a class="text-white transition" href="hizmetler.html">Hizmetler</a>
-              <a class="transition hover:text-white" href="ndt.html">Tahribatsız Muayene</a>
-              <a class="transition hover:text-white" href="periyodik-kontroller.html">Periyodik Kontroller</a>
+            <nav class="hidden items-center gap-8 text-sm font-medium text-[color:var(--color-ink-muted)] lg:flex">
+              <a class="nav-link transition" href="index.html">Anasayfa</a>
+              <a class="nav-link transition" href="hakkimizda.html">Hakkımızda</a>
+              <a class="nav-link transition" href="misyon-vizyon.html">Misyon &amp; Vizyon</a>
+              <a class="nav-link transition" href="uzman-kadro.html">Uzman Kadro</a>
+              <a class="nav-link text-[color:var(--color-ink)]" aria-current="page" href="hizmetler.html">Hizmetler</a>
+              <a class="nav-link transition" href="ndt.html">Tahribatsız Muayene</a>
+              <a class="nav-link transition" href="periyodik-kontroller.html">Periyodik Kontroller</a>
             </nav>
           </div>
         </div>
-        <nav id="mobile-navigation" class="hidden border-t border-white/10 bg-[#0a2035] lg:hidden">
-          <div class="flex flex-col px-6 py-4 text-sm text-white/85">
-            <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="index.html">Anasayfa</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="hakkimizda.html">Hakkımızda</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="misyon-vizyon.html">Misyon &amp; Vizyon</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="uzman-kadro.html">Uzman Kadro</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-white/10 text-white" href="hizmetler.html">Hizmetler</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="ndt.html">Tahribatsız Muayene</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-white/10" href="periyodik-kontroller.html">Periyodik Kontroller</a>
+        <nav id="mobile-navigation" class="hidden border-t border-[rgba(18,56,117,0.1)] bg-white/95 lg:hidden">
+          <div class="flex flex-col px-6 py-4 text-sm text-[color:var(--color-ink-muted)]">
+            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="index.html">Anasayfa</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="hakkimizda.html">Hakkımızda</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="misyon-vizyon.html">Misyon &amp; Vizyon</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="uzman-kadro.html">Uzman Kadro</a>
+            <a class="rounded-xl px-4 py-3 font-semibold text-[color:var(--color-electric)] transition hover:bg-[rgba(74,166,255,0.1)]" aria-current="page" href="hizmetler.html">Hizmetler</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="ndt.html">Tahribatsız Muayene</a>
+            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="periyodik-kontroller.html">Periyodik Kontroller</a>
           </div>
         </nav>
       </header>
 
       <main class="mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-5 py-12 sm:gap-16 sm:px-10 sm:py-16 lg:px-20">
-        <section class="overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0f2a45]/95 via-[#163d5f]/90 to-[#0a233d]/95 shadow-[0_25px_60px_rgba(5,12,16,0.55)]">
+        <section class="futuristic-panel overflow-hidden">
           <div class="grid items-center gap-8 p-6 sm:gap-10 sm:p-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div class="space-y-6">
-              <p class="text-xs uppercase tracking-[0.35em] text-[#b9824b]">Uzmanlık alanlarımız</p>
-              <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Mühendislik çözümlerimiz</h2>
-              <p class="text-base leading-relaxed text-white/80">
+            <div class="space-y-6 lg:space-y-8">
+              <span class="badge-ember inline-flex w-fit items-center justify-center rounded-full px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.34em]">Uzmanlık alanlarımız</span>
+              <h2 class="text-3xl font-semibold tracking-tight text-[color:var(--color-ink)] sm:text-4xl">Mühendislik çözümlerimiz</h2>
+              <p class="text-base leading-relaxed text-[color:var(--color-ink-muted)]">
                 Periyodik kontrolleri, tahribatsız muayeneleri ve danışmanlık süreçlerini tek merkezden yöneterek tesislerinizin mevzuata uyumunu ve operasyon güvenliğini güçlendiriyoruz.
               </p>
             </div>
-            <div class="relative h-full min-h-[220px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[280px]">
-              <img class="h-full w-full object-cover opacity-80" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Endüstriyel tesis" loading="lazy" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="relative h-full min-h-[220px] overflow-hidden rounded-[28px] border border-[rgba(18,56,117,0.12)] bg-white/70 sm:min-h-[280px]">
+              <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Endüstriyel tesis" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[rgba(18,56,117,0.2)] via-white/60 to-transparent"></div>
             </div>
           </div>
         </section>
 
         <section class="fade-in space-y-10">
           <div class="grid gap-6 lg:grid-cols-2">
-            <article class="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-base leading-relaxed text-white/80 sm:p-8">
-              <h3 class="text-lg font-semibold text-white">Mekanik ve güvenlik kontrolleri</h3>
-              <ul class="mt-4 space-y-3 text-sm text-white/75">
+            <article class="futuristic-card p-6 text-base leading-relaxed text-[color:var(--color-ink-muted)] sm:p-8">
+              <h3 class="text-lg font-semibold text-[color:var(--color-ink)]">Mekanik ve güvenlik kontrolleri</h3>
+              <ul class="mt-4 space-y-3 text-sm">
                 <li>• Tahribatsız Muayene (VT, MT, PT, UT)</li>
                 <li>• Basınçlı Kaplar ve Kaldırma Araçları için Periyodik Kontrol</li>
                 <li>• Yangın tesisatı ve ekipmanlarının periyodik kontrolleri</li>
                 <li>• Pompa performans ölçümleri ve verim analizleri</li>
               </ul>
             </article>
-            <article class="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-base leading-relaxed text-white/80 sm:p-8">
-              <h3 class="text-lg font-semibold text-white">Mühendislik ve danışmanlık</h3>
-              <ul class="mt-4 space-y-3 text-sm text-white/75">
+            <article class="futuristic-card p-6 text-base leading-relaxed text-[color:var(--color-ink-muted)] sm:p-8">
+              <h3 class="text-lg font-semibold text-[color:var(--color-ink)]">Mühendislik ve danışmanlık</h3>
+              <ul class="mt-4 space-y-3 text-sm">
                 <li>• 3. Taraf Gözetim Hizmetleri</li>
                 <li>• Elektrik tesisatı, parafudor ve topraklama ölçümleri</li>
                 <li>• Endüstriyel rafların bilgisayar destekli statik analizi ve kapasite tayini</li>
                 <li>• Bilirkişilik, danışmanlık ve müşavirlik hizmetleri</li>
                 <li>• Sıhhi tesisat, ısıtma, havalandırma ve yangın tesisatı projelendirme</li>
                 <li>• Enerji kimlik belgesi hizmetleri</li>
-                <li>• AİTM (Araçların İmal, Tadil ve Montajı Hakkında Yönetmelik) projelendirme</li>
+                <li>• AİTM projelendirme destekleri</li>
               </ul>
             </article>
           </div>
         </section>
 
         <section class="fade-in space-y-8">
-          <div class="space-y-6 rounded-[32px] border border-[#b9824b]/30 bg-gradient-to-br from-[#171f2c]/95 via-[#1d2b3a]/90 to-[#101722]/95 p-6 text-white/80 sm:p-10">
-            <p class="text-xs uppercase tracking-[0.32em] text-[#d79d60]">Kaynaklı imalat çözümleri</p>
-            <h3 class="text-2xl font-semibold tracking-tight text-white">Kaynak süreçlerine yönelik uzman desteğimiz</h3>
+          <div class="futuristic-panel space-y-6 p-6 text-[color:var(--color-ink-muted)] sm:p-10">
+            <span class="badge-soft inline-flex w-fit items-center justify-center rounded-full px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.32em]">Kaynaklı imalat çözümleri</span>
+            <h3 class="text-2xl font-semibold tracking-tight text-[color:var(--color-ink)]">Kaynak süreçlerine yönelik uzman desteğimiz</h3>
             <p>
-              Basınçlı kaplar, köprüler, boru hatları ve ağır sanayi tesisleri gibi yapılarda kaynak operasyonları maliyet ve ürün kalitesi üzerinde belirleyicidir.
-              Bu üretimleri gerçekleştiren işletmelerin ve ürünlerin uluslararası standart ve direktiflere göre doğrulanması ve belgelendirilmesi zorunludur.
+              Basınçlı kaplar, köprüler, boru hatları ve ağır sanayi tesisleri gibi yapılarda kaynak operasyonları maliyet ve ürün kalitesi üzerinde belirleyicidir. Bu üretimleri gerçekleştiren işletmelerin ve ürünlerin uluslararası standart ve direktiflere göre doğrulanması ve belgelendirilmesi zorunludur.
             </p>
             <p>
-              Enerji Grup Teknik Mühendislik, kaynaklı imalat projelerinde onay, belgelendirme ve gözetim gereksinimlerini uluslararası çözüm ortaklarıyla birlikte yönetir.
-              Uzman mühendis ekibimiz saha çalışmalarından raporlamaya kadar her aşamada kesintisiz destek sağlar.
+              Enerji Grup Teknik Mühendislik, kaynaklı imalat projelerinde onay, belgelendirme ve gözetim gereksinimlerini uluslararası çözüm ortaklarıyla birlikte yönetir. Uzman mühendis ekibimiz saha çalışmalarından raporlamaya kadar her aşamada kesintisiz destek sağlar.
             </p>
           </div>
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
-              <h4 class="text-lg font-semibold text-white">Mekanik kaynak gözetimi</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynaklı imalat aşamalarında süreçleri standartlara göre denetliyor, üretim kayıtlarının düzenli tutulmasını sağlıyoruz.</p>
+            <div class="futuristic-card p-6 text-[color:var(--color-ink-muted)]">
+              <h4 class="text-lg font-semibold text-[color:var(--color-ink)]">Mekanik kaynak gözetimi</h4>
+              <p class="mt-3 text-sm leading-relaxed">Kaynaklı imalat aşamalarında süreçleri standartlara göre denetliyor, üretim kayıtlarının düzenli tutulmasını sağlıyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
-              <h4 class="text-lg font-semibold text-white">Kaynak metodu onayları</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak yöntem onaylarını hazırlıyor, prosedürlerinizi belgelerle destekleyerek denetimlerden sorunsuz geçmenizi sağlıyoruz.</p>
+            <div class="futuristic-card p-6 text-[color:var(--color-ink-muted)]">
+              <h4 class="text-lg font-semibold text-[color:var(--color-ink)]">Kaynak metodu onayları</h4>
+              <p class="mt-3 text-sm leading-relaxed">Kaynak yöntem onaylarını hazırlıyor, prosedürlerinizi belgelerle destekleyerek denetimlerden sorunsuz geçmenizi sağlıyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
-              <h4 class="text-lg font-semibold text-white">Kaynakçı sertifikasyonu</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak personelinizin (WPQ) yeterliliklerini değerlendiriyor, ulusal ve uluslararası standartlara uygun sertifikasyon süreçlerini yönetiyoruz.</p>
+            <div class="futuristic-card p-6 text-[color:var(--color-ink-muted)]">
+              <h4 class="text-lg font-semibold text-[color:var(--color-ink)]">Kaynakçı sertifikasyonu</h4>
+              <p class="mt-3 text-sm leading-relaxed">Kaynak personelinizin yeterliliklerini değerlendiriyor, ulusal ve uluslararası standartlara uygun sertifikasyon süreçlerini yönetiyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
-              <h4 class="text-lg font-semibold text-white">WPS hazırlığı</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynak prosedür şartnamelerini (WPS) oluşturuyor, WPQR testlerini organize ederek dokümantasyonunuzu eksiksiz tamamlıyoruz.</p>
+            <div class="futuristic-card p-6 text-[color:var(--color-ink-muted)]">
+              <h4 class="text-lg font-semibold text-[color:var(--color-ink)]">WPS hazırlığı</h4>
+              <p class="mt-3 text-sm leading-relaxed">Kaynak prosedür şartnamelerini (WPS) oluşturuyor, WPQR testlerini organize ederek dokümantasyonunuzu eksiksiz tamamlıyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
-              <h4 class="text-lg font-semibold text-white">Kaynak testleri ve muayeneleri</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Tahribatsız ve tahribatlı testleri planlayarak kaynaklı birleşimlerin dayanımını doğruluyoruz.</p>
+            <div class="futuristic-card p-6 text-[color:var(--color-ink-muted)]">
+              <h4 class="text-lg font-semibold text-[color:var(--color-ink)]">Kaynak testleri ve muayeneleri</h4>
+              <p class="mt-3 text-sm leading-relaxed">Tahribatsız ve tahribatlı testleri planlayarak kaynaklı birleşimlerin dayanımını doğruluyoruz.</p>
             </div>
-            <div class="rounded-[24px] border border-white/10 bg-gradient-to-br from-[#0d243d] via-[#163a58] to-[#0a1d33] p-6 text-white/80">
-              <h4 class="text-lg font-semibold text-white">ISO 3834 &amp; ISO 9001 entegrasyonu</h4>
-              <p class="mt-3 text-sm leading-relaxed text-white/75">Kaynaklı imalat süreçlerinizde ISO 3834 ve ISO 9001 gerekliliklerini kurarak sürdürülebilir kalite yönetim altyapısı oluşturuyoruz.</p>
+            <div class="futuristic-card p-6 text-[color:var(--color-ink-muted)]">
+              <h4 class="text-lg font-semibold text-[color:var(--color-ink)]">ISO 3834 &amp; ISO 9001 entegrasyonu</h4>
+              <p class="mt-3 text-sm leading-relaxed">Kaynaklı imalat süreçlerinizde ISO 3834 ve ISO 9001 gerekliliklerini kurarak sürdürülebilir kalite yönetim altyapısı oluşturuyoruz.</p>
             </div>
           </div>
         </section>
       </main>
 
-      <footer class="footer-modern relative mt-20 overflow-hidden bg-gradient-to-br from-[#0a233d] via-[#13375a] to-[#07182d] text-white">
-        <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3f85c6]/20 blur-3xl"></div>
-        <div class="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#b9824b]/20 blur-3xl"></div>
+      <footer class="footer-modern relative mt-20 overflow-hidden text-white">
+        <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(74,166,255,0.28)] blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[rgba(255,122,41,0.32)] blur-3xl"></div>
         <div class="mx-auto w-full max-w-[1200px] px-5 py-12 sm:px-10 sm:py-16 lg:px-20">
           <div class="flex flex-col gap-10">
             <div class="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div class="space-y-5">
-                <span class="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] text-[#c9d6df]">Enerji Grup Teknik</span>
+                <span class="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] text-white/75">Enerji Grup Teknik</span>
                 <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Geleceğin enerjisini birlikte inşa edelim</h2>
-                <p class="max-w-xl text-sm leading-relaxed text-white/75">
+                <p class="max-w-xl text-sm leading-relaxed text-white/80">
                   Yetkin mühendis kadromuzla enerji altyapısındaki kritik riskleri analiz ediyor, işletmelerin güvenliğini güçlendiren çağdaş çözümler geliştiriyoruz.
                 </p>
               </div>
-              <a class="inline-flex items-center justify-center gap-2 rounded-full border border-[#b9824b]/40 bg-gradient-to-r from-[#b9824b] via-[#d79d60] to-[#3f85c6] px-8 py-3 text-sm font-semibold text-[#081a2c] shadow-[0_15px_45px_rgba(10,25,36,0.55)] transition hover:scale-105" href="mailto:info@enerjigrupteknik.com">
+              <a class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-gradient-to-r from-[rgba(18,56,117,0.95)] via-[rgba(74,166,255,0.85)] to-[rgba(255,122,41,0.95)] px-8 py-3 text-sm font-semibold text-white shadow-[0_18px_48px_rgba(8,22,53,0.45)] transition hover:scale-105" href="mailto:info@enerjigrupteknik.com">
                 İletişime Geç
                 <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -254,7 +434,7 @@
                 </svg>
               </a>
             </div>
-            <div class="grid gap-8 rounded-[28px] border border-white/10 bg-white/5 p-6 sm:gap-10 sm:p-8 lg:grid-cols-[1.2fr_1fr_1fr]">
+            <div class="grid gap-8 rounded-[28px] border border-white/10 bg-white/5 text-white/80 p-6 sm:gap-10 sm:p-8 lg:grid-cols-[1.2fr_1fr_1fr]">
               <div class="space-y-4 text-white/80">
                 <div class="flex items-center gap-4 text-white">
                   <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-dashed border-white/25 bg-white/15 text-[10px] uppercase tracking-[0.3em] text-white/70">
@@ -287,7 +467,7 @@
                 </ul>
               </div>
             </div>
-            <div class="flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex flex-col gap-4 border-t border-white/15 pt-6 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between">
               <p>© 2024 Enerji Grup Teknik Mühendislik. Tüm hakları saklıdır.</p>
               <p>Bağımsız, tarafsız ve belgelendirilmiş denetim hizmetleri.</p>
             </div>
