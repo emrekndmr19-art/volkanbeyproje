@@ -16,25 +16,25 @@
     <style>
       :root {
         color-scheme: light;
-        --color-ink: #0b1f36;
-        --color-ink-soft: #2f3e5c;
-        --color-ink-muted: #51607a;
-        --color-cloud: #f6f8ff;
+        --color-ink: #111a24;
+        --color-ink-soft: #1f2c3b;
+        --color-ink-muted: #4c5a68;
+        --color-cloud: #f2f4f7;
         --color-foam: #ffffff;
-        --color-electric: #123875;
-        --color-azure: #4aa6ff;
-        --color-ember: #ff7a29;
-        --color-amber: #ffb15c;
-        --color-border: rgba(18, 56, 117, 0.12);
-        --color-highlight: rgba(74, 166, 255, 0.16);
+        --color-electric: #1f2f44;
+        --color-azure: #6183a6;
+        --color-ember: #a8a9ad;
+        --color-amber: #d5d6da;
+        --color-border: rgba(31, 47, 68, 0.14);
+        --color-highlight: rgba(97, 131, 166, 0.18);
         --radius-xl: 32px;
       }
 
       body {
         font-family: "Space Grotesk", "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
-          radial-gradient(circle at 12% 18%, rgba(74, 166, 255, 0.18), transparent 55%),
-          radial-gradient(circle at 78% 12%, rgba(255, 122, 41, 0.14), transparent 48%),
+          radial-gradient(circle at 12% 18%, rgba(97, 131, 166, 0.2), transparent 55%),
+          radial-gradient(circle at 78% 12%, rgba(168, 169, 173, 0.18), transparent 48%),
           linear-gradient(180deg, var(--color-foam), var(--color-cloud));
         color: var(--color-ink);
         position: relative;
@@ -128,9 +128,9 @@
         position: fixed;
         inset: -120px;
         background:
-          radial-gradient(circle at 20% 20%, rgba(74, 166, 255, 0.12), transparent 60%),
-          radial-gradient(circle at 80% 25%, rgba(255, 122, 41, 0.12), transparent 55%),
-          conic-gradient(from 180deg at 50% 50%, rgba(10, 45, 105, 0.18), transparent 50%);
+          radial-gradient(circle at 20% 20%, rgba(97, 131, 166, 0.16), transparent 60%),
+          radial-gradient(circle at 80% 25%, rgba(168, 169, 173, 0.16), transparent 55%),
+          conic-gradient(from 180deg at 50% 50%, rgba(31, 47, 68, 0.22), transparent 50%);
         filter: blur(0px);
         z-index: -2;
         animation: aurora-flow 18s ease-in-out infinite;
@@ -140,7 +140,7 @@
         content: "";
         position: fixed;
         inset: 0;
-        background-image: radial-gradient(rgba(18, 56, 117, 0.08) 1px, transparent 0);
+        background-image: radial-gradient(rgba(97, 131, 166, 0.1) 1px, transparent 0);
         background-size: 60px 60px;
         opacity: 0.35;
         z-index: -3;
@@ -149,28 +149,55 @@
       .floating-orb {
         position: absolute;
         border-radius: 999px;
-        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.92), rgba(74, 166, 255, 0.45));
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.92), rgba(97, 131, 166, 0.45));
         filter: blur(0.4px);
-        box-shadow: 0 24px 60px rgba(18, 56, 117, 0.18);
+        box-shadow: 0 24px 60px rgba(31, 47, 68, 0.18);
         animation: pulse-orbit 12s ease-in-out infinite;
       }
 
       .floating-orb.orb-2 {
-        background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.9), rgba(255, 122, 41, 0.45));
+        background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.9), rgba(168, 169, 173, 0.45));
         animation-duration: 16s;
         animation-delay: 1.2s;
       }
 
       .futuristic-header {
-        background: rgba(255, 255, 255, 0.82);
+        position: relative;
+        overflow: hidden;
+        color: rgba(242, 244, 247, 0.96);
+        background: linear-gradient(
+          140deg,
+          rgba(31, 47, 68, 0.95) 0%,
+          rgba(97, 131, 166, 0.95) 55%,
+          rgba(168, 169, 173, 0.9) 100%
+        );
         backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(18, 56, 117, 0.08);
-        box-shadow: 0 18px 50px rgba(11, 31, 54, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 28px 60px rgba(18, 27, 40, 0.25);
+      }
+
+      .futuristic-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 12% 50%, rgba(255, 255, 255, 0.18), transparent 58%),
+          radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.12), transparent 60%);
+        mix-blend-mode: screen;
+        opacity: 0.85;
+        pointer-events: none;
+      }
+
+      .futuristic-header > * {
+        position: relative;
+        z-index: 1;
       }
 
       .futuristic-header .nav-link {
         position: relative;
         padding: 0.25rem 0;
+        color: rgba(242, 244, 247, 0.82);
+        transition: color 0.25s ease;
       }
 
       .futuristic-header .nav-link::after {
@@ -180,10 +207,15 @@
         bottom: -0.4rem;
         height: 2px;
         width: 100%;
-        background: linear-gradient(90deg, var(--color-electric), var(--color-ember));
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(168, 169, 173, 0.7));
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.25s ease;
+      }
+
+      .futuristic-header .nav-link:hover,
+      .futuristic-header .nav-link[aria-current="page"] {
+        color: #ffffff;
       }
 
       .futuristic-header .nav-link:hover::after,
@@ -191,12 +223,78 @@
         transform: scaleX(1);
       }
 
+      .futuristic-header #mobile-menu-toggle {
+        border-color: rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(242, 244, 247, 0.96);
+        transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      }
+
+      .futuristic-header #mobile-menu-toggle:hover {
+        border-color: rgba(255, 255, 255, 0.55);
+        background: rgba(255, 255, 255, 0.16);
+        transform: translateY(-1px);
+      }
+
+      .futuristic-header #mobile-navigation {
+        background: rgba(17, 26, 36, 0.92);
+        border-color: rgba(255, 255, 255, 0.12);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      .futuristic-header #mobile-navigation a {
+        color: rgba(242, 244, 247, 0.82);
+      }
+
+      .futuristic-header #mobile-navigation a[aria-current="page"] {
+        background: rgba(97, 131, 166, 0.26);
+        color: #ffffff;
+      }
+
+      .futuristic-header #mobile-navigation a:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+      }
+
+      .brand-lockup {
+        gap: 1.5rem;
+      }
+
+      .logo-slot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 72px;
+        width: 72px;
+        border-radius: 24px;
+        padding: 0.65rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      }
+
+      .logo-slot img,
+      .logo-slot svg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .logo-placeholder {
+        border-style: dashed;
+        border-color: rgba(255, 255, 255, 0.45);
+        color: rgba(242, 244, 247, 0.78);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
       .futuristic-panel {
         background: var(--color-card, rgba(255, 255, 255, 0.82));
         border: 1px solid var(--color-border);
         border-radius: var(--radius-xl);
         box-shadow:
-          0 24px 60px rgba(11, 31, 54, 0.08),
+          0 24px 60px rgba(18, 27, 40, 0.08),
           inset 0 1px 0 rgba(255, 255, 255, 0.7);
         position: relative;
         overflow: hidden;
@@ -206,7 +304,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(135deg, rgba(74, 166, 255, 0.16), rgba(255, 255, 255, 0));
+        background: linear-gradient(135deg, rgba(97, 131, 166, 0.2), rgba(255, 255, 255, 0));
         opacity: 0.9;
         pointer-events: none;
       }
@@ -219,16 +317,16 @@
       .futuristic-card {
         background: rgba(255, 255, 255, 0.9);
         border-radius: 28px;
-        border: 1px solid rgba(18, 56, 117, 0.08);
-        box-shadow: 0 20px 50px rgba(12, 33, 72, 0.08);
+        border: 1px solid rgba(31, 47, 68, 0.12);
+        box-shadow: 0 20px 50px rgba(24, 39, 58, 0.1);
         transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.45s ease;
         overflow: hidden;
       }
 
       .futuristic-card:hover {
         transform: translateY(-10px) scale(1.01);
-        border-color: rgba(255, 122, 41, 0.35);
-        box-shadow: 0 30px 70px rgba(18, 56, 117, 0.16);
+        border-color: rgba(97, 131, 166, 0.4);
+        box-shadow: 0 30px 70px rgba(31, 47, 68, 0.22);
       }
 
       .futuristic-card img {
@@ -236,20 +334,20 @@
       }
 
       .badge-soft {
-        background: rgba(74, 166, 255, 0.12);
+        background: rgba(97, 131, 166, 0.16);
         color: var(--color-electric);
-        border: 1px solid rgba(74, 166, 255, 0.25);
+        border: 1px solid rgba(97, 131, 166, 0.3);
       }
 
       .badge-ember {
-        background: rgba(255, 122, 41, 0.12);
+        background: rgba(168, 169, 173, 0.16);
         color: var(--color-ember);
-        border: 1px solid rgba(255, 122, 41, 0.2);
+        border: 1px solid rgba(168, 169, 173, 0.24);
       }
 
       .footer-modern {
         position: relative;
-        background: linear-gradient(135deg, #0b1f36 0%, #123875 55%, #0b1f36 100%);
+        background: linear-gradient(135deg, #1f2f44 0%, #3f5b7a 55%, #1f2f44 100%);
         color: #f5f7ff;
         border-top: 1px solid rgba(255, 255, 255, 0.12);
       }
@@ -264,8 +362,8 @@
 
       .footer-modern::before {
         background:
-          radial-gradient(circle at 15% 20%, rgba(74, 166, 255, 0.45), transparent 55%),
-          radial-gradient(circle at 85% 15%, rgba(255, 122, 41, 0.35), transparent 50%);
+          radial-gradient(circle at 15% 20%, rgba(97, 131, 166, 0.45), transparent 55%),
+          radial-gradient(circle at 85% 15%, rgba(168, 169, 173, 0.35), transparent 50%);
         opacity: 0.9;
         mix-blend-mode: screen;
       }
@@ -282,21 +380,20 @@
       <span class="floating-orb orb-2 -right-28 top-1/3 hidden h-56 w-56 lg:block"></span>
       <header class="futuristic-header">
         <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-10 lg:px-20">
-          <div class="flex items-center gap-4">
-            <div class="h-12 w-12 rounded-2xl border border-dashed border-[rgba(18,56,117,0.14)] bg-[rgba(74,166,255,0.08)] p-1 text-xs text-[color:var(--color-ink-muted)]">
-              <div class="flex h-full w-full items-center justify-center text-center">
-                Logo Alanı<br />400×400px
-              </div>
+          <div class="brand-lockup flex items-center">
+            <div class="logo-slot logo-placeholder text-[11px] leading-tight text-center uppercase tracking-[0.18em]">
+              <span aria-hidden="true">Logo Alanı<br />400×400px</span>
+              <span class="sr-only">Enerji Grup Teknik Mühendislik için logo alanı</span>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-[0.4em] text-[color:var(--color-ember)]">Enerji Grup Teknik</p>
-              <h1 class="text-lg font-semibold tracking-tight text-[color:var(--color-ink)]">Enerji Grup Teknik Mühendislik</h1>
+              <p class="text-xs uppercase tracking-[0.4em] text-white/70">Enerji Grup Teknik</p>
+              <h1 class="text-lg font-semibold tracking-tight text-white">Enerji Grup Teknik Mühendislik</h1>
             </div>
           </div>
           <div class="flex w-full items-center justify-end gap-4 sm:w-auto">
             <button
               id="mobile-menu-toggle"
-              class="inline-flex size-10 items-center justify-center rounded-full border border-[rgba(18,56,117,0.12)] bg-white/80 text-[color:var(--color-ink)] transition hover:border-[rgba(18,56,117,0.3)] hover:bg-white lg:hidden"
+              class="inline-flex size-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:border-white/60 hover:bg-white/20 lg:hidden"
               aria-label="Menüyü aç"
               aria-expanded="false"
             >
@@ -306,26 +403,26 @@
                 <path d="M4 17H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
               </svg>
             </button>
-            <nav class="hidden items-center gap-8 text-sm font-medium text-[color:var(--color-ink-muted)] lg:flex">
+            <nav class="hidden items-center gap-8 text-sm font-medium lg:flex">
               <a class="nav-link transition" href="index.html">Anasayfa</a>
               <a class="nav-link transition" href="hakkimizda.html">Hakkımızda</a>
               <a class="nav-link transition" href="misyon-vizyon.html">Misyon &amp; Vizyon</a>
               <a class="nav-link transition" href="uzman-kadro.html">Uzman Kadro</a>
               <a class="nav-link transition" href="hizmetler.html">Hizmetler</a>
               <a class="nav-link transition" href="ndt.html">Tahribatsız Muayene</a>
-              <a class="nav-link text-[color:var(--color-ink)]" aria-current="page" href="periyodik-kontroller.html">Periyodik Kontroller</a>
+              <a class="nav-link font-semibold" aria-current="page" href="periyodik-kontroller.html">Periyodik Kontroller</a>
             </nav>
           </div>
         </div>
-        <nav id="mobile-navigation" class="hidden border-t border-[rgba(18,56,117,0.1)] bg-white/95 lg:hidden">
-          <div class="flex flex-col px-6 py-4 text-sm text-[color:var(--color-ink-muted)]">
-            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="index.html">Anasayfa</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="hakkimizda.html">Hakkımızda</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="misyon-vizyon.html">Misyon &amp; Vizyon</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="uzman-kadro.html">Uzman Kadro</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="hizmetler.html">Hizmetler</a>
-            <a class="rounded-xl px-4 py-3 transition hover:bg-[rgba(74,166,255,0.1)]" href="ndt.html">Tahribatsız Muayene</a>
-            <a class="rounded-xl px-4 py-3 font-semibold text-[color:var(--color-electric)] transition hover:bg-[rgba(74,166,255,0.1)]" aria-current="page" href="periyodik-kontroller.html">Periyodik Kontroller</a>
+        <nav id="mobile-navigation" class="hidden border-t lg:hidden">
+          <div class="flex flex-col px-6 py-4 text-sm text-white/80">
+            <a class="rounded-xl px-4 py-3 transition text-white/80 hover:bg-white/10 hover:text-white" href="index.html">Anasayfa</a>
+            <a class="rounded-xl px-4 py-3 transition text-white/80 hover:bg-white/10 hover:text-white" href="hakkimizda.html">Hakkımızda</a>
+            <a class="rounded-xl px-4 py-3 transition text-white/80 hover:bg-white/10 hover:text-white" href="misyon-vizyon.html">Misyon &amp; Vizyon</a>
+            <a class="rounded-xl px-4 py-3 transition text-white/80 hover:bg-white/10 hover:text-white" href="uzman-kadro.html">Uzman Kadro</a>
+            <a class="rounded-xl px-4 py-3 transition text-white/80 hover:bg-white/10 hover:text-white" href="hizmetler.html">Hizmetler</a>
+            <a class="rounded-xl px-4 py-3 transition text-white/80 hover:bg-white/10 hover:text-white" href="ndt.html">Tahribatsız Muayene</a>
+            <a class="rounded-xl px-4 py-3 font-semibold text-white transition hover:bg-white/10" aria-current="page" href="periyodik-kontroller.html">Periyodik Kontroller</a>
           </div>
         </nav>
       </header>
@@ -340,9 +437,9 @@
                 TS ISO 5057 standardı ekipman muayene periyotlarını belirler; biz de bu rehbere ek olarak işletmenin kullanım sıklığı ve çalışma koşullarına göre özel kontrol planları hazırlıyoruz.
               </p>
             </div>
-            <div class="relative h-full min-h-[220px] overflow-hidden rounded-[28px] border border-[rgba(18,56,117,0.12)] bg-white/70 sm:min-h-[320px]">
+            <div class="relative h-full min-h-[220px] overflow-hidden rounded-[28px] border border-[rgba(31,47,68,0.16)] bg-white/70 sm:min-h-[320px]">
               <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Periyodik kontrol ekipmanı" loading="lazy" />
-              <div class="absolute inset-0 bg-gradient-to-t from-[rgba(18,56,117,0.18)] via-white/60 to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[rgba(31,47,68,0.18)] via-white/60 to-transparent"></div>
             </div>
           </div>
         </section>
@@ -396,7 +493,7 @@
               <li>• Paratoner tesisatının ölçümü, raporlanması ve jeneratör periyodik kontrolleri</li>
               <li>• Klima ve havalandırma sistemlerinin işletme şartlarına göre performans takibi</li>
             </ul>
-            <div class="overflow-x-auto rounded-[24px] border border-[rgba(18,56,117,0.12)] bg-white/80 p-4 sm:p-6">
+            <div class="overflow-x-auto rounded-[24px] border border-[rgba(31,47,68,0.16)] bg-white/80 p-4 sm:p-6">
               <table class="w-full text-left text-sm text-[color:var(--color-ink-muted)]">
                 <thead class="text-xs uppercase tracking-[0.24em] text-[color:var(--color-ember)]">
                   <tr>
@@ -405,7 +502,7 @@
                     <th class="pb-4 font-semibold text-[color:var(--color-ink)]">Kontrol kriterleri</th>
                   </tr>
                 </thead>
-                <tbody class="divide-y divide-[rgba(18,56,117,0.08)]">
+                <tbody class="divide-y divide-[rgba(31,47,68,0.08)]">
                   <tr>
                     <td class="py-4 pr-6 align-top">Elektrik, topraklama ve paratoner tesisatları</td>
                     <td class="py-4 pr-6 align-top">İlgili standartlarda tanımlanan süreler (çoğunlukla yılda 1)</td>
@@ -434,8 +531,8 @@
       </main>
 
       <footer class="footer-modern relative mt-20 overflow-hidden text-white">
-        <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(74,166,255,0.28)] blur-3xl"></div>
-        <div class="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[rgba(255,122,41,0.32)] blur-3xl"></div>
+        <div class="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(97,131,166,0.32)] blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[rgba(168,169,173,0.3)] blur-3xl"></div>
         <div class="mx-auto w-full max-w-[1200px] px-5 py-12 sm:px-10 sm:py-16 lg:px-20">
           <div class="flex flex-col gap-10">
             <div class="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -446,7 +543,7 @@
                   Yetkin mühendis kadromuzla enerji altyapısındaki kritik riskleri analiz ediyor, işletmelerin güvenliğini güçlendiren çağdaş çözümler geliştiriyoruz.
                 </p>
               </div>
-              <a class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-gradient-to-r from-[rgba(18,56,117,0.95)] via-[rgba(74,166,255,0.85)] to-[rgba(255,122,41,0.95)] px-8 py-3 text-sm font-semibold text-white shadow-[0_18px_48px_rgba(8,22,53,0.45)] transition hover:scale-105" href="mailto:info@enerjigrupteknik.com">
+              <a class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-gradient-to-r from-[rgba(31,47,68,0.95)] via-[rgba(97,131,166,0.85)] to-[rgba(168,169,173,0.95)] px-8 py-3 text-sm font-semibold text-white shadow-[0_18px_48px_rgba(18,27,40,0.45)] transition hover:scale-105" href="mailto:info@enerjigrupteknik.com">
                 İletişime Geç
                 <svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -454,14 +551,14 @@
                 </svg>
               </a>
             </div>
-            <div class="grid gap-8 rounded-[28px] border border-white/10 bg-white/5 text-white/80 p-6 sm:gap-10 sm:p-8 lg:grid-cols-[1.2fr_1fr_1fr]">
+            <div class="grid gap-8 rounded-[28px] border border-white/10 bg-white/5 text-white/85 p-6 sm:gap-10 sm:p-8 lg:grid-cols-[1.2fr_1fr_1fr]">
               <div class="space-y-4 text-white/80">
                 <div class="flex items-center gap-4 text-white">
                   <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-dashed border-white/25 bg-white/15 text-[10px] uppercase tracking-[0.3em] text-white/70">
                     Logo
                   </div>
                   <div>
-                    <p class="text-xs uppercase tracking-[0.3em] text-[#b9824b]">Enerji Grup Teknik</p>
+                    <p class="text-xs uppercase tracking-[0.3em] text-[color:var(--color-azure)]">Enerji Grup Teknik</p>
                     <span class="text-lg font-semibold tracking-tight text-white">Enerji Grup Teknik Mühendislik</span>
                   </div>
                 </div>
@@ -470,7 +567,7 @@
                 </p>
               </div>
               <div class="space-y-4 text-sm text-white/75">
-                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[#d79d60]">İletişim</h3>
+                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[color:var(--color-amber)]">İletişim</h3>
                 <ul class="space-y-2">
                   <li><strong class="text-white">Adres:</strong> Adres bilgilerinizi buraya ekleyin.</li>
                   <li><strong class="text-white">Telefon:</strong> Telefon numaranızı buraya ekleyin.</li>
@@ -478,7 +575,7 @@
                 </ul>
               </div>
               <div class="space-y-4 text-sm text-white/75">
-                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[#d79d60]">Hızlı bağlantılar</h3>
+                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-[color:var(--color-amber)]">Hızlı bağlantılar</h3>
                 <ul class="space-y-2">
                   <li><a class="transition hover:text-white" href="hakkimizda.html">Kurumsal</a></li>
                   <li><a class="transition hover:text-white" href="hizmetler.html">Hizmetler</a></li>
@@ -487,7 +584,7 @@
                 </ul>
               </div>
             </div>
-            <div class="flex flex-col gap-4 border-t border-white/15 pt-6 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex flex-col gap-4 border-t border-white/20 pt-6 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between">
               <p>© 2024 Enerji Grup Teknik Mühendislik. Tüm hakları saklıdır.</p>
               <p>Bağımsız, tarafsız ve belgelendirilmiş denetim hizmetleri.</p>
             </div>
